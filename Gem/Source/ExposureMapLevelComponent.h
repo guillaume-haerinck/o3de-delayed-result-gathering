@@ -3,12 +3,8 @@
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/Math/Vector2.h>
+#include <AzCore/Math/Vector3.h>
 #include <AzCore/std/containers/vector.h>
-
-namespace AZ
-{
-    class Vector3;
-}
 
 namespace DelayedResultGathering
 {
@@ -29,7 +25,7 @@ namespace DelayedResultGathering
 
         uint16_t ComputeCellCount() const;
         uint16_t ComputeCellIndex(uint8_t row, uint8_t column) const;
-        AZ::Vector2 ComputeCellCenter(uint8_t row, uint8_t column) const;
+        AZ::Vector3 ComputeCellCenter(uint8_t row, uint8_t column) const;
         uint16_t PositionToCellIndex(const AZ::Vector2& position) const;
 
     private:
@@ -45,11 +41,11 @@ namespace DelayedResultGathering
 
     private:
         uint8_t m_cellSize = 2; // in meters
-        uint8_t m_gridDimension = 40; // in number of cells
+        uint8_t m_gridDimension = 20; // in number of cells per dimension
 
         // All vectors below are of the same size with grid being source of truth.
         // Index in array represent a 2D position (see GetCellIndex() to see how it is computed)
-        AZStd::vector<AZ::Vector2> m_grid; // A 2D grid which covers the current level. The 2D position stored is the center of the cell
+        AZStd::vector<AZ::Vector3> m_grid; // A 2D grid which covers the current level. The 2D position stored is the center of the cell
         AZStd::vector<float> m_distanceToSentinelMap; // For each position, distance from self to sentinel
         AZStd::vector<bool> m_isPositionObstructedMap; // For each position, true if obstructed by an obstacle
         AZStd::vector<bool> m_isPositionExposedMap; // For each position, true if visible by a sentinel POV

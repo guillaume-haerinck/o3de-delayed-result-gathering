@@ -1,13 +1,17 @@
 #include "ExposureMapLevelComponent.h"
 
+#include <AzCore/Interface/Interface.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
 #include <AzCore/Math/Transform.h>
-#include <AzCore/Math/Vector3.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/std/limits.h>
+#include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
+#include <AzFramework/Physics/Common/PhysicsTypes.h>
+#include <AzFramework/Physics/PhysicsScene.h>
 #include <DebugDraw/DebugDrawBus.h>
+#include <assert.h>
 
 namespace DelayedResultGathering
 {
@@ -36,6 +40,7 @@ namespace DelayedResultGathering
 
     void ExposureMapLevelComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
+        BuildGrid();
         DebugDrawExposureMap();
     }
 
@@ -50,11 +55,11 @@ namespace DelayedResultGathering
                 continue;
             }
 
-            const AZ::Vector2& center = m_grid[cellIndex];
+            const AZ::Vector3& center = m_grid[cellIndex];
 
-            AZ::Aabb aabb = AZ::Aabb::CreateCenterHalfExtents(
-                AZ::Vector3(center.GetX(), center.GetY(), 0.f), AZ::Vector3(m_cellSize / 2.2f, m_cellSize / 2.2f, 0.01f));
-            const AZ::Color color = AZ::Color::CreateFromRgba(255, 0, 0, 200);
+            AZ::Aabb aabb = AZ::Aabb::CreateCenterHalfExtents(center, AZ::Vector3(m_cellSize / 2.2f, m_cellSize / 2.2f, 0.01f));
+            const bool isExposed = m_isPositionExposedMap[cellIndex];
+            const AZ::Color color = isExposed ? AZ::Color::CreateFromRgba(255, 0, 0, 200) : AZ::Color::CreateFromRgba(0, 255, 0, 200);
             constexpr float duration = 0.f; // One frame
             DebugDraw::DebugDrawRequestBus::Broadcast(&DebugDraw::DebugDrawRequests::DrawAabb, aabb, color, duration);
         }
@@ -70,9 +75,9 @@ namespace DelayedResultGathering
         return row * m_gridDimension + column;
     }
 
-    AZ::Vector2 ExposureMapLevelComponent::ComputeCellCenter(uint8_t row, uint8_t column) const
+    AZ::Vector3 ExposureMapLevelComponent::ComputeCellCenter(uint8_t row, uint8_t column) const
     {
-        return AZ::Vector2(static_cast<float>((column + 0.5) * m_cellSize), static_cast<float>((row + 0.5) * m_cellSize));
+        return AZ::Vector3(static_cast<float>((column + 0.5) * m_cellSize), static_cast<float>((row + 0.5) * m_cellSize), 0.f);
     }
 
     uint16_t ExposureMapLevelComponent::PositionToCellIndex(const AZ::Vector2& position) const
@@ -85,7 +90,6 @@ namespace DelayedResultGathering
     void ExposureMapLevelComponent::Activate()
     {
         AZ::TickBus::Handler::BusConnect();
-        BuildGrid();
     }
 
     void ExposureMapLevelComponent::Deactivate()
@@ -101,16 +105,33 @@ namespace DelayedResultGathering
         m_isPositionObstructedMap.resize(cellCount);
         m_isPositionExposedMap.resize(cellCount);
 
+        auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
+        if (sceneHandle == AzPhysics::InvalidSceneHandle)
+        {
+            assert(false);
+            return;
+        }
+
         for (uint8_t row = 0; row < m_gridDimension; ++row)
         {
             for (uint8_t column = 0; column < m_gridDimension; ++column)
             {
                 const uint16_t cellIndex = ComputeCellIndex(row, column);
-                const AZ::Vector2 center = ComputeCellCenter(row, column);
+                const AZ::Vector3 center = ComputeCellCenter(row, column);
+
+                AzPhysics::RayCastRequest request;
+                request.m_start = center + 5.f * AZ::Vector3::CreateAxisZ(); // Above all obstacles
+                request.m_direction = AZ::Vector3::CreateAxisZ(-1.f);
+                request.m_distance = 4.5f; // Above ground
+                request.m_queryType = AzPhysics::SceneQuery::QueryType::Static;
+
+                const AzPhysics::SceneQueryHits result = sceneInterface->QueryScene(sceneHandle, &request);
+                const bool hasHit = result && result.m_hits[0].IsValid();
 
                 m_grid[cellIndex] = center;
                 m_distanceToSentinelMap[cellIndex] = AZStd::numeric_limits<float>::max();
-                m_isPositionObstructedMap[cellIndex] = false; // #GH_TODO need a topdown raycast
+                m_isPositionObstructedMap[cellIndex] = hasHit;
                 m_isPositionExposedMap[cellIndex] = false;
             }
         }
