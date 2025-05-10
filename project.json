@@ -18,10 +18,20 @@
         "Gem"
     ],
     "gem_names": [
-        "DelayedResultGathering",
         "Atom",
         "CameraFramework",
-        "ImGui"
+        "DebugDraw",
+        "DelayedResultGathering",
+        "ImGui",
+        "LyShine",
+        "PhysX",
+        "PrefabBuilder",
+        "PrimitiveAssets",
+        "RemoteTools",
+        "ScriptEvents",
+        "StartingPointCamera",
+        "StartingPointInput",
+        "WhiteBox"
     ],
     "restricted": "DelayedResultGathering",
     "engine_version": "4.2.0"

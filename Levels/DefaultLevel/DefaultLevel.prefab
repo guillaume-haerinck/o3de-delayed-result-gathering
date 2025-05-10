@@ -47,6 +47,13 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 9562516168917670048
             },
+            "ExposureMapSystemComponent": {
+                "$type": "GenericComponentWrapper",
+                "Id": 10221012415948530296,
+                "m_template": {
+                    "$type": "ExposureMapSystemComponent"
+                }
+            },
             "LocalViewBookmarkComponent": {
                 "$type": "LocalViewBookmarkComponent",
                 "Id": 15646370697722364603,
@@ -140,7 +147,14 @@
                 "Component_[16578565737331764849]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 16578565737331764849,
-                    "Parent Entity": "Entity_[1176639161715]"
+                    "Parent Entity": "Entity_[1176639161715]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            -0.6936039924621582
+                        ]
+                    }
                 },
                 "Component_[16919232076966545697]": {
                     "$type": "EditorInspectorComponent",
@@ -195,7 +209,7 @@
                                     "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
                                     "subId": 277889906
                                 },
-                                "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
+                                "assetHint": "objects/groudplane/groundplane_512x512m.fbx.azmodel"
                             }
                         }
                     }
@@ -402,7 +416,7 @@
                                     "guid": "{FD340C30-755C-5911-92A3-19A3F7A77931}",
                                     "subId": 281415304
                                 },
-                                "assetHint": "objects/shaderball/shaderball_default_1m.azmodel"
+                                "assetHint": "objects/shaderball/shaderball_default_1m.fbx.azmodel"
                             }
                         }
                     }

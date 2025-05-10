@@ -7,6 +7,7 @@
 
 namespace DelayedResultGathering
 {
+    //! This Gem global system component
     class DelayedResultGatheringSystemComponent
         : public AZ::Component
         , protected DelayedResultGatheringRequestBus::Handler

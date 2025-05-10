@@ -1,15 +1,14 @@
+#include "Components/ExposureMapSentinelComponent.h"
+#include "DelayedResultGathering/DelayedResultGatheringTypeIds.h"
+#include "DelayedResultGatheringSystemComponent.h"
+#include "ExposureMapLevelComponent.h"
 
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
 
-#include "DelayedResultGatheringSystemComponent.h"
-
-#include <DelayedResultGathering/DelayedResultGatheringTypeIds.h>
-
 namespace DelayedResultGathering
 {
-    class DelayedResultGatheringModule
-        : public AZ::Module
+    class DelayedResultGatheringModule : public AZ::Module
     {
     public:
         AZ_RTTI(DelayedResultGatheringModule, DelayedResultGatheringModuleTypeId, AZ::Module);
@@ -19,9 +18,11 @@ namespace DelayedResultGathering
             : AZ::Module()
         {
             // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
-            m_descriptors.insert(m_descriptors.end(), {
-                DelayedResultGatheringSystemComponent::CreateDescriptor(),
-            });
+            m_descriptors.insert(
+                m_descriptors.end(),
+                { DelayedResultGatheringSystemComponent::CreateDescriptor(),
+                  ExposureMapLevelComponent::CreateDescriptor(),
+                  ExposureMapSentinelComponent::CreateDescriptor() });
         }
 
         /**
@@ -29,12 +30,10 @@ namespace DelayedResultGathering
          */
         AZ::ComponentTypeList GetRequiredSystemComponents() const override
         {
-            return AZ::ComponentTypeList{
-                azrtti_typeid<DelayedResultGatheringSystemComponent>(),
-            };
+            return AZ::ComponentTypeList{ azrtti_typeid<DelayedResultGatheringSystemComponent>() };
         }
     };
-}// namespace DelayedResultGathering
+} // namespace DelayedResultGathering
 
 #if defined(O3DE_GEM_NAME)
 AZ_DECLARE_MODULE_CLASS(AZ_JOIN(Gem_, O3DE_GEM_NAME), DelayedResultGathering::DelayedResultGatheringModule)
