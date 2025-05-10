@@ -1,0 +1,15 @@
+
+#pragma once
+
+// this file is included by 'scenesrg_all.srgi', which is included by each shader using the scene-srg.
+// Please read README.md for an explanation on why scenesrg.srgi and viewsrg.srgi are
+// located in this folder (And how you can optionally customize your own scenesrg.srgi
+// and viewsrg.srgi in your game project).
+
+#include <Atom/Features/SrgSemantics.azsli>
+
+partial ShaderResourceGroup SceneSrg : SRG_PerScene
+{
+    /* Intentionally Empty. Add fields here based on the project's needs */
+};
+

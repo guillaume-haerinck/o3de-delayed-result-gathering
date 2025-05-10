@@ -1,0 +1,28 @@
+{
+    "project_name": "DelayedResultGathering",
+    "version": "1.0.0",
+    "project_id": "{31B3669D-9B42-4AAB-A5A4-0F1B5E18A8C2}",
+    "origin": "The primary repo for DelayedResultGathering goes here: i.e. http://www.mydomain.com",
+    "license": "What license DelayedResultGathering uses goes here: i.e. https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
+    "display_name": "DelayedResultGathering",
+    "summary": "A short description of DelayedResultGathering.",
+    "canonical_tags": [
+        "Project"
+    ],
+    "user_tags": [
+        "DelayedResultGathering"
+    ],
+    "icon_path": "preview.png",
+    "engine": "o3de",
+    "external_subdirectories": [
+        "Gem"
+    ],
+    "gem_names": [
+        "DelayedResultGathering",
+        "Atom",
+        "CameraFramework",
+        "ImGui"
+    ],
+    "restricted": "DelayedResultGathering",
+    "engine_version": "4.2.0"
+}
