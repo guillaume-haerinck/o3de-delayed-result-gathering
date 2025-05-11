@@ -5,7 +5,6 @@
 #include <AzCore/Console/IConsole.h>
 #include <AzCore/Debug/Profiler.h>
 #include <AzCore/EBus/Results.h>
-#include <AzCore/Jobs/JobCompletion.h>
 #include <AzCore/Jobs/JobFunction.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
@@ -35,7 +34,7 @@ AZ_CVAR(
     0,
     nullptr,
     AZ::ConsoleFunctorFlags::Null,
-    "0: singlethread, 1: multi_gatherSameFrame, 2: multi_gatherNextFrame, 3: multi_timeSlice");
+    "0: singlethread,\n1: multi_gatherSameFrame,\n2: multi_gatherNextFrame,\n3: multi_timeSlice");
 
 namespace DelayedResultGathering
 {
@@ -104,7 +103,7 @@ namespace DelayedResultGathering
             UpdateExposure_SingleThreaded(eyePosition);
         else if (exposuremap_threadMode == 1)
             UpdateExposure_MultiThreadedGatherSameFrame(eyePosition);
-        else if (exposuremap_threadMode == 1)
+        else if (exposuremap_threadMode == 2)
             UpdateExposure_MultiThreadedGatherNextFrame(eyePosition);
         else
             UpdateExposure_MultiThreadedTimeSlicing(eyePosition);
@@ -312,7 +311,7 @@ namespace DelayedResultGathering
                 m_grid[cellIndex] = center;
                 m_distanceToEnemyMap[cellIndex] = AZStd::numeric_limits<float>::max();
                 m_isPositionObstructedMap[cellIndex] = hasHit;
-                m_isPositionExposedMap[cellIndex] = false;
+               // m_isPositionExposedMap[cellIndex] = false; // #GH_TODO temp as it breaks gathernextframe
             }
         }
     }
@@ -347,8 +346,6 @@ namespace DelayedResultGathering
             return;
         }
 
-        m_raycastTasks.clear();
-
         AZ::JobCompletion jobCompletion;
 
         const uint16_t taskSize = ComputeTaskBatchSize();
@@ -377,12 +374,50 @@ namespace DelayedResultGathering
         jobCompletion.StartAndWaitForCompletion();
     }
 
-    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedGatherNextFrame([[maybe_unused]] const AZ::Vector3& enemyPosition)
+    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedGatherNextFrame(const AZ::Vector3& eyePosition)
     {
         AZ_PROFILE_FUNCTION(Game);
+
+        // Wait for completion of previous frame. Should be done already so we shouldn't wait
+        if (m_raycastingJobCompletion)
+            m_raycastingJobCompletion->StartAndWaitForCompletion();
+
+        m_raycastingJobCompletion = aznew AZ::JobCompletion();
+
+        auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
+        if (sceneHandle == AzPhysics::InvalidSceneHandle)
+        {
+            assert(false);
+            return;
+        }
+
+        const uint16_t taskSize = ComputeTaskBatchSize();
+        for (uint16_t cellIndex = 0; cellIndex < cellCount; cellIndex += taskSize)
+        {
+            // We can no longer capture by reference as it might go out of scope
+            const auto raycastJob = [this, taskSize, cellIndex, eyePosition, sceneInterface, sceneHandle]()
+            {
+                uint16_t safeTaskSize = taskSize;
+                if (cellIndex + taskSize >= cellCount)
+                {
+                    safeTaskSize = cellCount - cellIndex;
+                }
+
+                for (uint16_t i = 0; i < safeTaskSize; ++i)
+                {
+                    m_isPositionExposedMap[cellIndex + i] =
+                        !IsCellToPositionObstructed(eyePosition, cellIndex + i, *sceneInterface, sceneHandle);
+                }
+            };
+
+            AZ::Job* executeGroupJob = AZ::CreateJobFunction(AZStd::move(raycastJob), true, nullptr);
+            executeGroupJob->SetDependent(m_raycastingJobCompletion);
+            executeGroupJob->Start();
+        }
     }
 
-    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedTimeSlicing([[maybe_unused]] const AZ::Vector3& enemyPosition)
+    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedTimeSlicing([[maybe_unused]] const AZ::Vector3& eyePosition)
     {
         AZ_PROFILE_FUNCTION(Game);
     }

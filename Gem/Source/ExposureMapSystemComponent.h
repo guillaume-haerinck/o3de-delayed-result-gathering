@@ -5,6 +5,7 @@
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/Interface/Interface.h>
+#include <AzCore/Jobs/JobCompletion.h>
 #include <AzCore/Math/Vector3.h>
 #include <AzCore/std/containers/array.h>
 #include <AzCore/std/parallel/atomic.h>
@@ -92,5 +93,7 @@ namespace DelayedResultGathering
         AZStd::array<float, cellCount> m_distanceToEnemyMap; // For each position, distance from cell to enemy
         AZStd::array<bool, cellCount> m_isPositionObstructedMap; // For each position, true if obstructed by an obstacle
         AZStd::array<AZStd::atomic<bool>, cellCount> m_isPositionExposedMap; // For each position, true if visible by a sentinel POV
+
+        AZ::JobCompletion* m_raycastingJobCompletion = nullptr;
     };
 } // namespace DelayedResultGathering
