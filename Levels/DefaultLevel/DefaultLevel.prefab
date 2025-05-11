@@ -337,7 +337,10 @@
                 },
                 "EditorEntitySortComponent": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 5053845600415427448
+                    "Id": 5053845600415427448,
+                    "Child Entity Order": [
+                        "Entity_[5752359589936]"
+                    ]
                 },
                 "EditorInspectorComponent": {
                     "$type": "EditorInspectorComponent",
@@ -393,6 +396,101 @@
                         ]
                     },
                     "IsStatic": true
+                }
+            }
+        },
+        "Entity_[5752359589936]": {
+            "Id": "Entity_[5752359589936]",
+            "Name": "Navmesh",
+            "Components": {
+                "EditorAxisAlignedBoxShapeComponent": {
+                    "$type": "EditorAxisAlignedBoxShapeComponent",
+                    "Id": 8021509554430306880,
+                    "Visible": false,
+                    "DisplayFilled": false,
+                    "AxisAlignedBoxShape": {
+                        "Configuration": {
+                            "IsFilled": false,
+                            "Dimensions": [
+                                45.0,
+                                45.0,
+                                2.0
+                            ]
+                        }
+                    }
+                },
+                "EditorCommentComponent": {
+                    "$type": "EditorCommentComponent",
+                    "Id": 9454290974824120854,
+                    "Configuration": "Navmesh is only used by enenies for their go-to position logic\n"
+                },
+                "EditorDisabledCompositionComponent": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13586650716080044778
+                },
+                "EditorEntityIconComponent": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 534182206300675571
+                },
+                "EditorEntitySortComponent": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7648449872940227838
+                },
+                "EditorInspectorComponent": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 14200174288009064626
+                },
+                "EditorLockComponent": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5478276555328334451
+                },
+                "EditorOnlyEntityComponent": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 3458102551090135980
+                },
+                "EditorPendingCompositionComponent": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 2523141960750199343
+                },
+                "EditorRecastNavigationMeshComponent": {
+                    "$type": "EditorRecastNavigationMeshComponent",
+                    "Id": 10018388364814103043,
+                    "Controller": {
+                        "Configuration": {
+                            "Agent Height": 1.7999999523162842,
+                            "Agent Radius": 0.20000000298023224,
+                            "Debug Draw": true,
+                            "Editor Preview": true
+                        }
+                    }
+                },
+                "EditorRecastNavigationPhysXProviderComponent": {
+                    "$type": "EditorRecastNavigationPhysXProviderComponent",
+                    "Id": 2837316607708860424,
+                    "Controller": {
+                        "Config": {
+                            "Use Editor Scene": true,
+                            "Collision Group": {
+                                "GroupId": "{FEDE99E9-B089-480E-8597-42A3C57AE37F}"
+                            }
+                        }
+                    }
+                },
+                "EditorVisibilityComponent": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8139631194885853028
+                },
+                "TransformComponent": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6967376340265777471,
+                    "Parent Entity": "Entity_[1443545786432]",
+                    "Transform Data": {
+                        "Translate": [
+                            20.0,
+                            20.0,
+                            0.0
+                        ]
+                    }
                 }
             }
         },
@@ -483,6 +581,13 @@
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 1494193549973812682,
                     "Parent Entity": "Entity_[1146574390643]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            -0.17828369140625
+                        ]
+                    },
                     "IsStatic": true
                 }
             }

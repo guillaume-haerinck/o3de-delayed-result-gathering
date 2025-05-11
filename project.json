@@ -27,6 +27,7 @@
         "PhysX",
         "PrefabBuilder",
         "PrimitiveAssets",
+        "RecastNavigation",
         "RemoteTools",
         "ScriptCanvasPhysics",
         "ScriptEvents",
