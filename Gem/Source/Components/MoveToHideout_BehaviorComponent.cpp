@@ -18,7 +18,8 @@ namespace DelayedResultGathering
     {
         if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serializeContext->Class<MoveToHideout_BehaviorComponent, AZ::Component>()->Version(0);
+            serializeContext->Class<MoveToHideout_BehaviorComponent, AZ::Component>()->Version(0)->Field(
+                "moveSpeed", &MoveToHideout_BehaviorComponent::m_moveSpeed);
 
             if (AZ::EditContext* editContext = serializeContext->GetEditContext())
             {
@@ -28,7 +29,12 @@ namespace DelayedResultGathering
                         "Move to hideout", "Entity will move to the nearest unexposed cell in the exposure map.")
                     ->ClassElement(ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::Category, "AI")
-                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC_CE("Game"));
+                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC_CE("Game"))
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default,
+                        &MoveToHideout_BehaviorComponent::m_moveSpeed,
+                        "Move Speed",
+                        "How fast actor should move when going into hideout");
             }
         }
     }
@@ -62,9 +68,8 @@ namespace DelayedResultGathering
             }
             else
             {
-                constexpr float speed = 1.f;
                 const AZ::Vector3 direction = distance.GetNormalized();
-                const AZ::Vector3 velocity = direction * deltaTime * speed;
+                const AZ::Vector3 velocity = direction * deltaTime * m_moveSpeed;
                 Physics::CharacterRequestBus::Event(GetEntityId(), &Physics::CharacterRequests::AddVelocityForTick, velocity);
             }
 
@@ -96,8 +101,8 @@ namespace DelayedResultGathering
             m_pathToTarget,
             GetEntityId(),
             &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions,
-            currentPosition,
-            newPosition);
+            newPosition,
+            currentPosition);
     }
 
     void MoveToHideout_BehaviorComponent::Activate()

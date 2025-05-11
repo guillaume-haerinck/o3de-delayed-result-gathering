@@ -1,6 +1,6 @@
 #include "Components/MoveToHideout_BehaviorComponent.h"
 #include "DelayedResultGathering/DelayedResultGatheringTypeIds.h"
-#include "ExposureMapLevelComponent.h"
+#include "ExposureMapSystemComponent.h"
 
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
@@ -18,7 +18,14 @@ namespace DelayedResultGathering
         {
             m_descriptors.insert(
                 m_descriptors.end(),
-                { ExposureMapLevelComponent::CreateDescriptor(), MoveToHideout_BehaviorComponent::CreateDescriptor() });
+                { ExposureMapSystemComponent::CreateDescriptor(), MoveToHideout_BehaviorComponent::CreateDescriptor() });
+        }
+
+        AZ::ComponentTypeList GetRequiredSystemComponents() const override
+        {
+            return AZ::ComponentTypeList{
+                azrtti_typeid<ExposureMapSystemComponent>(),
+            };
         }
     };
 } // namespace DelayedResultGathering

@@ -51,13 +51,6 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 9562516168917670048
             },
-            "ExposureMapLevelComponent": {
-                "$type": "GenericComponentWrapper",
-                "Id": 13113511563629083596,
-                "m_template": {
-                    "$type": "ExposureMapLevelComponent"
-                }
-            },
             "LocalViewBookmarkComponent": {
                 "$type": "LocalViewBookmarkComponent",
                 "Id": 15646370697722364603,
@@ -682,17 +675,32 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 5.020102500915527
+                    "value": 30.396339416503906
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 4.223219871520996
+                    "value": 22.085453033447266
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 0.3602290153503418
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/0",
+                    "value": 3.016204833984375
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/0",
+                    "value": -21.16771697998047
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/1",
+                    "value": -9.988070487976074
                 }
             ]
         },
@@ -1605,7 +1613,8 @@
                         "Id": 8569798761730283573,
                         "m_template": {
                             "$type": "MoveToHideout_BehaviorComponent",
-                            "Id": 0
+                            "Id": 0,
+                            "moveSpeed": 300.0
                         }
                     }
                 },
@@ -1622,12 +1631,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 13.519397735595703
+                    "value": 18.676485061645508
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 13.143316268920898
+                    "value": 30.21750831604004
                 },
                 {
                     "op": "replace",

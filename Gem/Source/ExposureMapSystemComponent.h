@@ -26,15 +26,18 @@ namespace DelayedResultGathering
 {
     //! Split the current level into a grid of accessible/inaccessible areas
     //! We update the accessibility of each areas based on the field of view of the sentinel (grabbed from player tag)
-    class ExposureMapLevelComponent
+    class ExposureMapSystemComponent
         : public AZ::Component
         , public AZ::TickBus::Handler
         , public AZ::Interface<ExposureMapInterface>::Registrar
     {
     public:
-        AZ_COMPONENT(ExposureMapLevelComponent, "{EDEBBD55-69B0-4B9F-B86B-2E208457FB32}");
+        AZ_COMPONENT(ExposureMapSystemComponent, "{EDEBBD55-69B0-4B9F-B86B-2E208457FB32}");
 
         static void Reflect(AZ::ReflectContext* context);
+
+        static void GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided);
+        static void GetIncompatibleServices(AZ::ComponentDescriptor::DependencyArrayType& incompatible);
 
         //! AZ::TickBus::Handler overrides
         int GetTickOrder() final override;

@@ -32,5 +32,6 @@ namespace DelayedResultGathering
 
     private:
         AZStd::vector<AZ::Vector3> m_pathToTarget;
+        float m_moveSpeed = 50.f;
     };
 } // namespace DelayedResultGathering

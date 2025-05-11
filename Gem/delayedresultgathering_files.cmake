@@ -4,6 +4,6 @@ set(FILES
     Include/DelayedResultGathering/DelayedResultGatheringTypeIds.h
     Source/Components/MoveToHideout_BehaviorComponent.cpp
     Source/Components/MoveToHideout_BehaviorComponent.h
-    Source/ExposureMapLevelComponent.cpp
-    Source/ExposureMapLevelComponent.h
+    Source/ExposureMapSystemComponent.cpp
+    Source/ExposureMapSystemComponent.h
 )

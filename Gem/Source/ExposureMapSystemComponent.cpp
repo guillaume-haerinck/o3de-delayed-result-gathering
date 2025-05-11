@@ -1,4 +1,4 @@
-#include "ExposureMapLevelComponent.h"
+#include "ExposureMapSystemComponent.h"
 
 #include <AzCore/Component/EntityId.h>
 #include <AzCore/Component/TransformBus.h>
@@ -22,31 +22,42 @@
 namespace DelayedResultGathering
 {
 
-    void ExposureMapLevelComponent::Reflect(AZ::ReflectContext* context)
+    void ExposureMapSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         if (auto serializeContext = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serializeContext->Class<ExposureMapLevelComponent, AZ::Component>()->Version(0);
+            serializeContext->Class<ExposureMapSystemComponent, AZ::Component>()->Version(0);
 
             if (AZ::EditContext* editContext = serializeContext->GetEditContext())
             {
                 using namespace AZ::Edit;
-                editContext->Class<ExposureMapLevelComponent>("Exposure Map", "Build an exposure map on this level.")
+                editContext
+                    ->Class<ExposureMapSystemComponent>("Exposure Map System Component", "System in charge of building the exposure map.")
                     ->ClassElement(ClassElements::EditorData, "")
-                    ->Attribute(AZ::Edit::Attributes::Category, "AI")
-                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC_CE("Level"));
+                    ->Attribute(AZ::Edit::Attributes::Category, "AI");
             }
         }
     }
 
-    int ExposureMapLevelComponent::GetTickOrder()
+    void ExposureMapSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
+    {
+        provided.push_back(AZ_CRC_CE("ExposureMapComponentService"));
+    }
+
+    void ExposureMapSystemComponent::GetIncompatibleServices(AZ::ComponentDescriptor::DependencyArrayType& incompatible)
+    {
+        incompatible.push_back(AZ_CRC_CE("ExposureMapComponentService"));
+    }
+
+    int ExposureMapSystemComponent::GetTickOrder()
     {
         return AZ::ComponentTickBus::TICK_GAME;
     }
 
-    void ExposureMapLevelComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
+    void ExposureMapSystemComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
-        if (m_gridNeedRebuild)
+        // #GH_TODO find an event to know when we are in game, we only want to rebuild the grid once we are in game
+       // if (m_gridNeedRebuild)
         {
             m_gridNeedRebuild = false;
             BuildGrid();
@@ -76,7 +87,7 @@ namespace DelayedResultGathering
         DebugDrawExposureMap();
     }
 
-    bool ExposureMapLevelComponent::IsPositionExposed(const AZ::Vector3& position) const
+    bool ExposureMapSystemComponent::IsPositionExposed(const AZ::Vector3& position) const
     {
         const uint16_t cellIndex = PositionToCellIndex(AZ::Vector2(position.GetX(), position.GetY()));
         if (cellIndex > m_grid.size())
@@ -88,7 +99,7 @@ namespace DelayedResultGathering
         return m_isPositionExposedMap[cellIndex];
     }
 
-    bool ExposureMapLevelComponent::FindNearestNonExposedPosition(
+    bool ExposureMapSystemComponent::FindNearestNonExposedPosition(
         [[maybe_unused]] const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const
     {
         // #GH_TODO not using the position, so we just return the closest to the sentinel ?
@@ -120,7 +131,7 @@ namespace DelayedResultGathering
         return found;
     }
 
-    void ExposureMapLevelComponent::DebugDrawExposureMap()
+    void ExposureMapSystemComponent::DebugDrawExposureMap()
     {
         const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
@@ -141,7 +152,7 @@ namespace DelayedResultGathering
         }
     }
 
-    void ExposureMapLevelComponent::UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition)
+    void ExposureMapSystemComponent::UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition)
     {
         const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
@@ -171,29 +182,29 @@ namespace DelayedResultGathering
         }
     }
 
-    uint16_t ExposureMapLevelComponent::ComputeCellCount() const
+    uint16_t ExposureMapSystemComponent::ComputeCellCount() const
     {
         return m_gridDimension * m_gridDimension;
     }
 
-    uint16_t ExposureMapLevelComponent::ComputeCellIndex(uint8_t row, uint8_t column) const
+    uint16_t ExposureMapSystemComponent::ComputeCellIndex(uint8_t row, uint8_t column) const
     {
         return row * m_gridDimension + column;
     }
 
-    AZ::Vector3 ExposureMapLevelComponent::ComputeCellCenter(uint8_t row, uint8_t column) const
+    AZ::Vector3 ExposureMapSystemComponent::ComputeCellCenter(uint8_t row, uint8_t column) const
     {
         return AZ::Vector3(static_cast<float>((column + 0.5) * m_cellSize), static_cast<float>((row + 0.5) * m_cellSize), 0.f);
     }
 
-    uint16_t ExposureMapLevelComponent::PositionToCellIndex(const AZ::Vector2& position) const
+    uint16_t ExposureMapSystemComponent::PositionToCellIndex(const AZ::Vector2& position) const
     {
         const uint8_t row = static_cast<uint8_t>(floor(position.GetY() / m_cellSize));
         const uint8_t column = static_cast<uint8_t>(floor(position.GetX() / m_cellSize));
         return ComputeCellIndex(row, column);
     }
 
-    bool ExposureMapLevelComponent::IsCellToPositionObstructed(
+    bool ExposureMapSystemComponent::IsCellToPositionObstructed(
         const AZ::Vector3& position,
         uint16_t cellIndex,
         AzPhysics::SceneInterface& sceneInterface,
@@ -218,17 +229,17 @@ namespace DelayedResultGathering
         return hasHit;
     }
 
-    void ExposureMapLevelComponent::Activate()
+    void ExposureMapSystemComponent::Activate()
     {
         AZ::TickBus::Handler::BusConnect();
     }
 
-    void ExposureMapLevelComponent::Deactivate()
+    void ExposureMapSystemComponent::Deactivate()
     {
         AZ::TickBus::Handler::BusDisconnect();
     }
 
-    void ExposureMapLevelComponent::BuildGrid()
+    void ExposureMapSystemComponent::BuildGrid()
     {
         const uint16_t cellCount = ComputeCellCount();
         m_grid.resize(cellCount);
@@ -268,7 +279,7 @@ namespace DelayedResultGathering
         }
     }
 
-    void ExposureMapLevelComponent::UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition)
+    void ExposureMapSystemComponent::UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition)
     {
         auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
         AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
@@ -281,7 +292,7 @@ namespace DelayedResultGathering
         const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
-            m_isPositionExposedMap[cellIndex] = IsCellToPositionObstructed(eyePosition, cellIndex, *sceneInterface, sceneHandle);
+            m_isPositionExposedMap[cellIndex] = !IsCellToPositionObstructed(eyePosition, cellIndex, *sceneInterface, sceneHandle);
         }
     }
 
