@@ -1,9 +1,9 @@
 #pragma once
 
-#include "DelayedResultGathering/ExposureMapBus.h"
-
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
+#include <AzCore/Math/Vector3.h>
+#include <AzCore/std/containers/vector.h>
 
 namespace DelayedResultGathering
 {
@@ -29,5 +29,8 @@ namespace DelayedResultGathering
         // AZ::Component
         void Activate() override;
         void Deactivate() override;
+
+    private:
+        AZStd::vector<AZ::Vector3> m_pathToTarget;
     };
 } // namespace DelayedResultGathering

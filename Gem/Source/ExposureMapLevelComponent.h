@@ -1,7 +1,10 @@
 #pragma once
 
+#include "DelayedResultGathering/ExposureMapInterface.h"
+
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
+#include <AzCore/Interface/Interface.h>
 #include <AzCore/Math/Vector3.h>
 #include <AzCore/std/containers/vector.h>
 #include <AzCore/std/tuple.h>
@@ -22,10 +25,11 @@ namespace AzPhysics
 namespace DelayedResultGathering
 {
     //! Split the current level into a grid of accessible/inaccessible areas
-    //! We update the accessibility of each areas based on the field of view of the sentinel it contains
+    //! We update the accessibility of each areas based on the field of view of the sentinel (grabbed from player tag)
     class ExposureMapLevelComponent
         : public AZ::Component
         , public AZ::TickBus::Handler
+        , public AZ::Interface<ExposureMapInterface>::Registrar
     {
     public:
         AZ_COMPONENT(ExposureMapLevelComponent, "{EDEBBD55-69B0-4B9F-B86B-2E208457FB32}");
@@ -36,9 +40,12 @@ namespace DelayedResultGathering
         int GetTickOrder() final override;
         void OnTick(float deltaTime, AZ::ScriptTimePoint timePoint) final override;
 
+        //! ExposureMapInterface overrides
+        bool IsPositionExposed(const AZ::Vector3& position) const override;
+        bool FindNearestNonExposedPosition(const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const override;
+
     private:
-        //////////////////////////////////////////////////////////////////////////
-        // AZ::Component
+        // AZ::Component overrides
         void Activate() override;
         void Deactivate() override;
 
@@ -57,6 +64,8 @@ namespace DelayedResultGathering
         void BuildGrid();
         void DebugDrawExposureMap();
 
+        void UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition);
+
         void UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition);
 
     private:
@@ -65,7 +74,7 @@ namespace DelayedResultGathering
         bool m_gridNeedRebuild = true;
 
         // All vectors below are of the same size with grid being source of truth.
-        // Index in array represent a 2D position (see GetCellIndex() to see how it is computed)
+        // Index in array represent a 2D position (see ComputeCellIndex() to see how it is computed)
         AZStd::vector<AZ::Vector3> m_grid; // A 2D grid which covers the current level. The 2D position stored is the center of the cell
         AZStd::vector<float> m_distanceToSentinelMap; // For each position, distance from self to sentinel
         AZStd::vector<bool> m_isPositionObstructedMap; // For each position, true if obstructed by an obstacle

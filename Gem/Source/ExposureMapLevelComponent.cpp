@@ -3,7 +3,6 @@
 #include <AzCore/Component/EntityId.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/EBus/Results.h>
-#include <AzCore/Interface/Interface.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
 #include <AzCore/Math/Crc.h>
@@ -17,6 +16,7 @@
 #include <AzFramework/Physics/PhysicsScene.h>
 #include <DebugDraw/DebugDrawBus.h>
 #include <LmbrCentral/Scripting/TagComponentBus.h>
+#include <RecastNavigation/DetourNavigationBus.h>
 #include <assert.h>
 
 namespace DelayedResultGathering
@@ -72,7 +72,52 @@ namespace DelayedResultGathering
         // #GH_TODO switch case for all the types
         UpdateExposure_SingleThreaded(eyePosition);
 
+        UpdateDistanceToSentinelMap(eyePosition);
         DebugDrawExposureMap();
+    }
+
+    bool ExposureMapLevelComponent::IsPositionExposed(const AZ::Vector3& position) const
+    {
+        const uint16_t cellIndex = PositionToCellIndex(AZ::Vector2(position.GetX(), position.GetY()));
+        if (cellIndex > m_grid.size())
+        {
+            assert(false);
+            return false;
+        }
+
+        return m_isPositionExposedMap[cellIndex];
+    }
+
+    bool ExposureMapLevelComponent::FindNearestNonExposedPosition(
+        [[maybe_unused]] const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const
+    {
+        // #GH_TODO not using the position, so we just return the closest to the sentinel ?
+
+        // This search is sub-optimal and will badly scale as grid size increase, using an octree would be way more efficient
+        float bestPathLength = AZStd::numeric_limits<float>::max();
+        bool found = false;
+        uint16_t bestCellIndex = 0;
+
+        const uint16_t cellCount = ComputeCellCount();
+        for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
+        {
+            if (m_isPositionExposedMap[cellIndex])
+                continue;
+
+            if (m_isPositionObstructedMap[cellIndex])
+                continue;
+
+            const float pathLength = m_distanceToSentinelMap[cellIndex];
+            if (pathLength >= bestPathLength)
+                continue;
+
+            bestPathLength = pathLength;
+            bestCellIndex = cellIndex;
+            found = true;
+        }
+
+        positionOut = m_grid[bestCellIndex];
+        return found;
     }
 
     void ExposureMapLevelComponent::DebugDrawExposureMap()
@@ -93,6 +138,36 @@ namespace DelayedResultGathering
             const AZ::Color color = isExposed ? AZ::Color::CreateFromRgba(255, 0, 0, 100) : AZ::Color::CreateFromRgba(0, 255, 0, 100);
             constexpr float duration = 0.f; // One frame
             DebugDraw::DebugDrawRequestBus::Broadcast(&DebugDraw::DebugDrawRequests::DrawAabb, aabb, color, duration);
+        }
+    }
+
+    void ExposureMapLevelComponent::UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition)
+    {
+        const uint16_t cellCount = ComputeCellCount();
+        for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
+        {
+            const AZ::Vector3& cellPosition = m_grid[cellIndex];
+
+            AZStd::vector<AZ::Vector3> path;
+            RecastNavigation::DetourNavigationRequestBus::EventResult(
+                path,
+                GetEntityId(),
+                &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions,
+                sentinelPosition,
+                cellPosition);
+
+            float totalDistance = 0.f;
+            for (size_t i = 0; i < path.size(); ++i)
+            {
+                const bool isLast = i == path.size() - 1;
+                if (isLast)
+                {
+                    continue;
+                }
+                totalDistance += (path[i] - path[i + 1]).GetLength();
+            }
+
+            m_distanceToSentinelMap[cellIndex] = totalDistance;
         }
     }
 

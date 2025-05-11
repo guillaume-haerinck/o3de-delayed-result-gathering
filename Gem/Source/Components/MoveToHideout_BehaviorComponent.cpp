@@ -1,5 +1,7 @@
 #include "MoveToHideout_BehaviorComponent.h"
 
+#include "DelayedResultGathering/ExposureMapInterface.h"
+
 #include <AzCore/Component/ComponentApplicationBus.h> // Missing include in Physics/CharacterBus.h
 #include <AzCore/Math/Vector3.h>
 #include <AzCore/Serialization/EditContext.h>
@@ -34,7 +36,7 @@ namespace DelayedResultGathering
     void MoveToHideout_BehaviorComponent::GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required)
     {
         required.push_back(AZ_CRC_CE("PhysicsCharacterControllerService"));
-        //required.push_back(AZ_CRC_CE("DetourNavigationComponent"));
+        // required.push_back(AZ_CRC_CE("DetourNavigationComponent"));
     }
 
     int MoveToHideout_BehaviorComponent::GetTickOrder()
@@ -42,24 +44,60 @@ namespace DelayedResultGathering
         return AZ::ComponentTickBus::TICK_GAME;
     }
 
-    void MoveToHideout_BehaviorComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
+    void MoveToHideout_BehaviorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
-        AZ::Vector3 velocity = AZ::Vector3(1.f, 0.f, 0.f);
-        Physics::CharacterRequestBus::Event(GetEntityId(), &Physics::CharacterRequests::AddVelocityForTick, velocity);
-        // #GH_TODO query the exposure map, and move to position if invalid
+        AZ::Vector3 currentPosition = AZ::Vector3(1.f, 0.f, 0.f);
+        Physics::CharacterRequestBus::EventResult(currentPosition, GetEntityId(), &Physics::CharacterRequests::GetBasePosition);
 
-        AZ::Vector3 from(5.f, 4.f, 0.f);
-        AZ::Vector3 to(5.f, 12.f, 0.f);
-
-        // #GH_TODO always empty
-        AZStd::vector<AZ::Vector3> waypoints;
-        RecastNavigation::DetourNavigationRequestBus::EventResult(
-            waypoints, GetEntityId(), &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions, from, to);
-
-        if (waypoints.empty())
+        const bool isMoving = !m_pathToTarget.empty();
+        if (isMoving)
         {
-            AZ_Printf("Test", "Hey");
+            // Proceed to the current target position
+            const AZ::Vector3& distance = m_pathToTarget.back() - currentPosition;
+            constexpr float tolerance = 0.4f;
+            const bool hasReachedDestination = distance.GetLength() < tolerance;
+            if (hasReachedDestination)
+            {
+                m_pathToTarget.pop_back();
+            }
+            else
+            {
+                constexpr float speed = 1.f;
+                const AZ::Vector3 direction = distance.GetNormalized();
+                const AZ::Vector3 velocity = direction * deltaTime * speed;
+                Physics::CharacterRequestBus::Event(GetEntityId(), &Physics::CharacterRequests::AddVelocityForTick, velocity);
+            }
+
+            return;
         }
+
+        const ExposureMapInterface* exposureMap = AZ::Interface<ExposureMapInterface>::Get();
+        if (!exposureMap)
+        {
+            assert(false);
+            return;
+        }
+
+        if (!exposureMap->IsPositionExposed(currentPosition))
+        {
+            // No need to move as we are already hidden
+            return;
+        }
+
+        AZ::Vector3 newPosition;
+        const bool success = exposureMap->FindNearestNonExposedPosition(currentPosition, newPosition);
+        if (!success)
+        {
+            assert(false);
+            return;
+        }
+
+        RecastNavigation::DetourNavigationRequestBus::EventResult(
+            m_pathToTarget,
+            GetEntityId(),
+            &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions,
+            currentPosition,
+            newPosition);
     }
 
     void MoveToHideout_BehaviorComponent::Activate()
