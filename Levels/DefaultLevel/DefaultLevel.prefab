@@ -22,7 +22,8 @@
                     "Entity_[1176639161715]",
                     "Entity_[1443545786432]",
                     "Entity_[9110062409792]",
-                    "Instance_[18815290493505]/ContainerEntity"
+                    "Instance_[18815290493505]/ContainerEntity",
+                    "Instance_[7554572504956]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -1546,6 +1547,76 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
+                }
+            ]
+        },
+        "Instance_[7554572504956]": {
+            "Source": "Assets/Actors/PaperKid/PaperKid.prefab",
+            "Patches": [
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[24016951258611]"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[24012656291315]/Components/EditorDetourNavigationComponent",
+                    "value": {
+                        "$type": "EditorDetourNavigationComponent",
+                        "Id": 1560472096981563692,
+                        "Navigation Mesh": "../Entity_[5752359589936]",
+                        "Nearest Distance": 3.0
+                    }
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[24012656291315]/Components/EditorEntitySortComponent/Child Entity Order/0"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[24012656291315]/Components/EditorMaterialComponent/Controller/Configuration/materials/0/Value/MaterialAsset/assetId/guid",
+                    "value": "{555E4BC1-53E7-57C3-BBAF-4360BF823EDC}"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[24012656291315]/Components/EditorMaterialComponent/Controller/Configuration/materials/0/Value/MaterialAsset/assetHint",
+                    "value": "assets/actors/paperkid/paper_kid_enemy.azmaterial"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[24012656291315]/Components/MoveToHideout_BehaviorComponent",
+                    "value": {
+                        "$type": "GenericComponentWrapper",
+                        "Id": 8569798761730283573,
+                        "m_template": {
+                            "$type": "MoveToHideout_BehaviorComponent",
+                            "Id": 0
+                        }
+                    }
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Name",
+                    "value": "Enemy"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 13.519397735595703
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 13.143316268920898
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": -0.11444425582885742
                 }
             ]
         }

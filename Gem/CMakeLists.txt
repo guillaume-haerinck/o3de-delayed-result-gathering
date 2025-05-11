@@ -31,10 +31,13 @@ ly_add_target(
             Include
     BUILD_DEPENDENCIES
         PRIVATE
+            AZ::AzCore
+            AZ::AzFramework
             AZ::AzGameFramework
             Gem::Atom_AtomBridge.Static
             Gem::DebugDraw.Static
             Gem::LmbrCentral.Static
+            Gem::RecastNavigation.API
 )
 
 ly_add_target(

@@ -1,0 +1,27 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.0010528725106269121,
+            0.0010528725106269121,
+            0.0010528725106269121,
+            1.0
+        ],
+        "baseColor.textureMap": "textures/Paper_Kid_BaseColor.png",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "irradiance.irradianceColorSource": "BaseColor",
+        "metallic.textureMap": "textures/Paper_Kid_Metallic.png",
+        "normal.textureMap": "textures/Paper_Kid_Normal.png",
+        "occlusion.diffuseTextureMap": "textures/Paper_Kid_AO.png",
+        "opacity.factor": 1.0,
+        "roughness.lowerBound": 0.4399999976158142,
+        "roughness.textureMap": "textures/Paper_Kid_Roughness.png",
+        "roughness.upperBound": 0.5199999809265137
+    }
+}

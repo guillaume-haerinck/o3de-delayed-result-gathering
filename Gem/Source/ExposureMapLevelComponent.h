@@ -13,7 +13,7 @@ namespace AZ
 
 namespace AzPhysics
 {
-    // Dirty but cannot include #include <AzFramework/Physics/Common/PhysicsTypes.h> from .h will have to look at it
+    // Dirty but cannot include <AzFramework/Physics/Common/PhysicsTypes.h> from .h it states that file does not exist during build
     class SceneInterface;
     using SceneIndex = AZ::s8;
     using SceneHandle = AZStd::tuple<AZ::Crc32, SceneIndex>;

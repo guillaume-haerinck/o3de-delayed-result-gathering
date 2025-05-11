@@ -6,63 +6,63 @@
 				<Class name="AZStd::string" field="value1" value="right strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="right strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/right strafe walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/right strafe walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="right strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="right strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/right strafe.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/right strafe.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="left strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="left strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/left strafe walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/left strafe walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="jump" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="jump" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/jump.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/jump.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="left strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="left strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/left strafe.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/left strafe.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="throw" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="throw" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/throw.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/throw.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/walking.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="fast run" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="fast run" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/fast run.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/fast run.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 			<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, MotionSet::MotionEntry*&gt;" field="element" type="{7D28A706-15EE-5B30-B2F7-A224146B4C7F}">
 				<Class name="AZStd::string" field="value1" value="happy idle" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				<Class name="MotionSet::MotionEntry" field="value2" version="1" type="{A1859687-2DE7-4B29-8A39-07836FDF5956}">
 					<Class name="AZStd::string" field="id" value="happy idle" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
-					<Class name="AZStd::string" field="assetId" value="assets/motions/happy idle.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+					<Class name="AZStd::string" field="assetId" value="assets/actors/paperkid/animation/motions/happy idle.motion" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 				</Class>
 			</Class>
 		</Class>

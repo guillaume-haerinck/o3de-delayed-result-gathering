@@ -1,6 +1,5 @@
-#include "Components/ExposureMapSentinelComponent.h"
+#include "Components/MoveToHideout_BehaviorComponent.h"
 #include "DelayedResultGathering/DelayedResultGatheringTypeIds.h"
-#include "DelayedResultGatheringSystemComponent.h"
 #include "ExposureMapLevelComponent.h"
 
 #include <AzCore/Memory/SystemAllocator.h>
@@ -17,20 +16,9 @@ namespace DelayedResultGathering
         DelayedResultGatheringModule()
             : AZ::Module()
         {
-            // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
             m_descriptors.insert(
                 m_descriptors.end(),
-                { DelayedResultGatheringSystemComponent::CreateDescriptor(),
-                  ExposureMapLevelComponent::CreateDescriptor(),
-                  ExposureMapSentinelComponent::CreateDescriptor() });
-        }
-
-        /**
-         * Add required SystemComponents to the SystemEntity.
-         */
-        AZ::ComponentTypeList GetRequiredSystemComponents() const override
-        {
-            return AZ::ComponentTypeList{ azrtti_typeid<DelayedResultGatheringSystemComponent>() };
+                { ExposureMapLevelComponent::CreateDescriptor(), MoveToHideout_BehaviorComponent::CreateDescriptor() });
         }
     };
 } // namespace DelayedResultGathering
