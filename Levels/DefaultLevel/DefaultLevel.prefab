@@ -477,6 +477,23 @@
                         }
                     }
                 },
+                "EditorScriptCanvasComponent": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 8891520000662085596,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{5ADA9F9E-313C-5A8B-836E-23F7DF450284}",
+                            "path": "Scripts/TriggerNavmeshGeneration.scriptcanvas"
+                        },
+                        "sourceName": "TriggerNavmeshGeneration.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{5ADA9F9E-313C-5A8B-836E-23F7DF450284}",
+                                "path": "Scripts/TriggerNavmeshGeneration.scriptcanvas"
+                            }
+                        }
+                    }
+                },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 8139631194885853028
