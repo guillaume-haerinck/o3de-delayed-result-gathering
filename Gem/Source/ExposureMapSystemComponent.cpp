@@ -37,6 +37,16 @@ AZ_CVAR(
     AZ::ConsoleFunctorFlags::Null,
     "0: singlethread,\n1: multi_gatherSameFrame,\n2: multi_gatherNextFrame,\n3: multi_timeSlice");
 
+AZ_CVAR(
+    int,
+    exposuremap_forceSlow,
+    0,
+    nullptr,
+    AZ::ConsoleFunctorFlags::Null,
+    "0: normalSpeed, >1 start to decrease the speed (at 15 already big impact)");
+
+AZ_CVAR(int, exposuremap_forceCpuCoreCount, 0, nullptr, AZ::ConsoleFunctorFlags::Null, "0: normalSpeed, >1 to override the used value");
+
 namespace DelayedResultGathering
 {
 
@@ -242,7 +252,8 @@ namespace DelayedResultGathering
 
     uint16_t ExposureMapSystemComponent::ComputeTaskBatchSize() const
     {
-        const unsigned int numCores = AZStd::thread::hardware_concurrency() / 2;
+        const unsigned int numCores =
+            exposuremap_forceCpuCoreCount > 0 ? exposuremap_forceCpuCoreCount : AZStd::thread::hardware_concurrency() / 2;
         return static_cast<uint16_t>(ceil(cellCount / numCores));
     }
 
@@ -268,6 +279,28 @@ namespace DelayedResultGathering
 
         const AzPhysics::SceneQueryHits result = sceneInterface.QueryScene(sceneHandle, &request);
         const bool hasHit = result && result.m_hits[0].IsValid();
+
+        if (exposuremap_forceSlow > 0)
+        {
+            const AZStd::function<void(int, int*)> fibo = [&fibo](int n, int* result)
+            {
+                // this is a spectacularly inefficient way to compute a Fibonacci number, just an example to test the jobs
+                if (n < 2)
+                {
+                    *result = n;
+                }
+                else
+                {
+                    int result1, result2;
+                    fibo(n - 1, &result1);
+                    fibo(n - 2, &result2);
+                    *result = result1 + result2;
+                }
+            };
+            int res = 0;
+            fibo(exposuremap_forceSlow, &res);
+        }
+
         return hasHit;
     }
 
