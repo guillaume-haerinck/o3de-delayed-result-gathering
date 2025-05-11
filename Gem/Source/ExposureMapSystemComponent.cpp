@@ -2,6 +2,7 @@
 
 #include <AzCore/Component/EntityId.h>
 #include <AzCore/Component/TransformBus.h>
+#include <AzCore/Console/IConsole.h>
 #include <AzCore/EBus/Results.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
@@ -19,6 +20,14 @@
 #include <LmbrCentral/Scripting/TagComponentBus.h>
 #include <RecastNavigation/DetourNavigationBus.h>
 #include <assert.h>
+
+AZ_CVAR(
+    int,
+    exposuremap_show,
+    1,
+    nullptr,
+    AZ::ConsoleFunctorFlags::Null,
+    "0: Hide exposure map debug draw, 1: Show exposure map debug draw");
 
 namespace DelayedResultGathering
 {
@@ -85,7 +94,8 @@ namespace DelayedResultGathering
         // #GH_TODO switch case for all the types
         UpdateExposure_SingleThreaded(eyePosition);
 
-        DebugDrawExposureMap();
+        if (exposuremap_show > 0)
+            DebugDrawExposureMap();
     }
 
     bool ExposureMapSystemComponent::IsPositionExposed(const AZ::Vector3& position) const
@@ -128,7 +138,7 @@ namespace DelayedResultGathering
             bestCellIndex = cellIndex;
             found = true;
         }
-        
+
         if (!found)
         {
             positionOut = currentPosition;

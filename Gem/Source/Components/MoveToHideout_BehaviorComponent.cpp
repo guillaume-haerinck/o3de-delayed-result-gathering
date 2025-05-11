@@ -124,13 +124,17 @@ namespace DelayedResultGathering
         if (m_pathToTarget.empty())
         {
             AZ::Vector3 textPos = newPosition;
-            newPosition.SetZ(4.f);
+            textPos.SetZ(4.f);
             DebugDraw::DebugDrawRequestBus::Broadcast(
                 &DebugDraw::DebugDrawRequests::DrawTextAtLocation,
                 textPos,
                 "Pathfinding Failed !",
                 AZ::Color::CreateFromRgba(255, 255, 125, 200),
                 0.5f);
+
+            AZ::Aabb aabb = AZ::Aabb::CreateCenterHalfExtents(newPosition, AZ::Vector3(0.2f, 0.2f, 2.f));
+            DebugDraw::DebugDrawRequestBus::Broadcast(
+                &DebugDraw::DebugDrawRequests::DrawAabb, aabb, AZ::Color::CreateFromRgba(255, 0, 0, 125), 6.f);
         }
     }
 
