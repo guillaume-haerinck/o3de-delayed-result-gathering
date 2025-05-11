@@ -3,7 +3,10 @@
 #include <AzCore/Component/EntityId.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Console/IConsole.h>
+#include <AzCore/Debug/Profiler.h>
 #include <AzCore/EBus/Results.h>
+#include <AzCore/Jobs/JobCompletion.h>
+#include <AzCore/Jobs/JobFunction.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
 #include <AzCore/Math/Crc.h>
@@ -12,6 +15,8 @@
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/std/limits.h>
+#include <AzCore/std/parallel/thread.h>
+
 #include <AzFramework/Physics/CharacterBus.h>
 #include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
 #include <AzFramework/Physics/Common/PhysicsTypes.h>
@@ -22,12 +27,15 @@
 #include <assert.h>
 
 AZ_CVAR(
+    int, exposuremap_show, 1, nullptr, AZ::ConsoleFunctorFlags::Null, "0: Hide exposure map debug draw, 1: Show exposure map debug draw");
+
+AZ_CVAR(
     int,
-    exposuremap_show,
-    1,
+    exposuremap_threadMode,
+    0,
     nullptr,
     AZ::ConsoleFunctorFlags::Null,
-    "0: Hide exposure map debug draw, 1: Show exposure map debug draw");
+    "0: singlethread, 1: multi_gatherSameFrame, 2: multi_gatherNextFrame, 3: multi_timeSlice");
 
 namespace DelayedResultGathering
 {
@@ -66,6 +74,7 @@ namespace DelayedResultGathering
 
     void ExposureMapSystemComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
+        AZ_PROFILE_FUNCTION(Game);
         // #GH_TODO find an event to know when we are in game, we only want to rebuild the grid once we are in game
         // if (m_gridNeedRebuild)
         {
@@ -91,8 +100,14 @@ namespace DelayedResultGathering
         AZ::Vector3 eyePosition = playerPosition;
         eyePosition.SetZ(eyePosition.GetZ() + 1.9f);
 
-        // #GH_TODO switch case for all the types
-        UpdateExposure_SingleThreaded(eyePosition);
+        if (exposuremap_threadMode == 0)
+            UpdateExposure_SingleThreaded(eyePosition);
+        else if (exposuremap_threadMode == 1)
+            UpdateExposure_MultiThreadedGatherSameFrame(eyePosition);
+        else if (exposuremap_threadMode == 1)
+            UpdateExposure_MultiThreadedGatherNextFrame(eyePosition);
+        else
+            UpdateExposure_MultiThreadedTimeSlicing(eyePosition);
 
         if (exposuremap_show > 0)
             DebugDrawExposureMap();
@@ -120,7 +135,6 @@ namespace DelayedResultGathering
         bool found = false;
         uint16_t bestCellIndex = 0;
 
-        const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
             if (m_isPositionExposedMap[cellIndex])
@@ -151,7 +165,6 @@ namespace DelayedResultGathering
 
     void ExposureMapSystemComponent::DebugDrawExposureMap()
     {
-        const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
             if (m_isPositionObstructedMap[cellIndex])
@@ -172,7 +185,8 @@ namespace DelayedResultGathering
 
     void ExposureMapSystemComponent::UpdateDistanceToEnemyMap(const AZ::Vector3& enemyPosition)
     {
-        const uint16_t cellCount = ComputeCellCount();
+        AZ_PROFILE_FUNCTION(Game);
+
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
             if (m_isPositionObstructedMap[cellIndex])
@@ -209,14 +223,9 @@ namespace DelayedResultGathering
         }
     }
 
-    uint16_t ExposureMapSystemComponent::ComputeCellCount() const
-    {
-        return m_gridDimension * m_gridDimension;
-    }
-
     uint16_t ExposureMapSystemComponent::ComputeCellIndex(uint8_t row, uint8_t column) const
     {
-        return row * m_gridDimension + column;
+        return row * gridDimension + column;
     }
 
     AZ::Vector3 ExposureMapSystemComponent::ComputeCellCenter(uint8_t row, uint8_t column) const
@@ -229,6 +238,12 @@ namespace DelayedResultGathering
         const uint8_t row = static_cast<uint8_t>(floor(position.GetY() / m_cellSize));
         const uint8_t column = static_cast<uint8_t>(floor(position.GetX() / m_cellSize));
         return ComputeCellIndex(row, column);
+    }
+
+    uint16_t ExposureMapSystemComponent::ComputeTaskBatchSize() const
+    {
+        const unsigned int numCores = AZStd::thread::hardware_concurrency() / 2;
+        return static_cast<uint16_t>(ceil(cellCount / numCores));
     }
 
     bool ExposureMapSystemComponent::IsCellToPositionObstructed(
@@ -268,11 +283,7 @@ namespace DelayedResultGathering
 
     void ExposureMapSystemComponent::BuildGrid()
     {
-        const uint16_t cellCount = ComputeCellCount();
-        m_grid.resize(cellCount);
-        m_distanceToEnemyMap.resize(cellCount);
-        m_isPositionObstructedMap.resize(cellCount);
-        m_isPositionExposedMap.resize(cellCount);
+        AZ_PROFILE_FUNCTION(Game);
 
         auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
         AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
@@ -282,9 +293,9 @@ namespace DelayedResultGathering
             return;
         }
 
-        for (uint8_t row = 0; row < m_gridDimension; ++row)
+        for (uint8_t row = 0; row < gridDimension; ++row)
         {
-            for (uint8_t column = 0; column < m_gridDimension; ++column)
+            for (uint8_t column = 0; column < gridDimension; ++column)
             {
                 const uint16_t cellIndex = ComputeCellIndex(row, column);
                 const AZ::Vector3 center = ComputeCellCenter(row, column);
@@ -308,6 +319,8 @@ namespace DelayedResultGathering
 
     void ExposureMapSystemComponent::UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition)
     {
+        AZ_PROFILE_FUNCTION(Game);
+
         auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
         AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
         if (sceneHandle == AzPhysics::InvalidSceneHandle)
@@ -316,11 +329,62 @@ namespace DelayedResultGathering
             return;
         }
 
-        const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
             m_isPositionExposedMap[cellIndex] = !IsCellToPositionObstructed(eyePosition, cellIndex, *sceneInterface, sceneHandle);
         }
+    }
+
+    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedGatherSameFrame(const AZ::Vector3& eyePosition)
+    {
+        AZ_PROFILE_FUNCTION(Game);
+
+        auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
+        if (sceneHandle == AzPhysics::InvalidSceneHandle)
+        {
+            assert(false);
+            return;
+        }
+
+        m_raycastTasks.clear();
+
+        AZ::JobCompletion jobCompletion;
+
+        const uint16_t taskSize = ComputeTaskBatchSize();
+        for (uint16_t cellIndex = 0; cellIndex < cellCount; cellIndex += taskSize)
+        {
+            const auto raycastJob = [this, taskSize, cellIndex, &eyePosition, &sceneInterface, &sceneHandle]()
+            {
+                uint16_t safeTaskSize = taskSize;
+                if (cellIndex + taskSize >= cellCount)
+                {
+                    safeTaskSize = cellCount - cellIndex;
+                }
+
+                for (uint16_t i = 0; i < safeTaskSize; ++i)
+                {
+                    m_isPositionExposedMap[cellIndex + i] =
+                        !IsCellToPositionObstructed(eyePosition, cellIndex + i, *sceneInterface, sceneHandle);
+                }
+            };
+
+            AZ::Job* executeGroupJob = AZ::CreateJobFunction(AZStd::move(raycastJob), true, nullptr);
+            executeGroupJob->SetDependent(&jobCompletion);
+            executeGroupJob->Start();
+        }
+
+        jobCompletion.StartAndWaitForCompletion();
+    }
+
+    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedGatherNextFrame([[maybe_unused]] const AZ::Vector3& enemyPosition)
+    {
+        AZ_PROFILE_FUNCTION(Game);
+    }
+
+    void ExposureMapSystemComponent::UpdateExposure_MultiThreadedTimeSlicing([[maybe_unused]] const AZ::Vector3& enemyPosition)
+    {
+        AZ_PROFILE_FUNCTION(Game);
     }
 
 } // namespace DelayedResultGathering
