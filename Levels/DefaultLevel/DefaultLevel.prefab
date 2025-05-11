@@ -460,7 +460,6 @@
                         "Configuration": {
                             "Agent Height": 1.7999999523162842,
                             "Agent Radius": 0.20000000298023224,
-                            "Debug Draw": true,
                             "Editor Preview": true
                         }
                     }
