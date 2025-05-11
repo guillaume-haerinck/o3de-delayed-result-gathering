@@ -42,6 +42,7 @@ namespace DelayedResultGathering
     private:
         uint8_t m_cellSize = 2; // in meters
         uint8_t m_gridDimension = 20; // in number of cells per dimension
+        bool m_gridNeedRebuild = true;
 
         // All vectors below are of the same size with grid being source of truth.
         // Index in array represent a 2D position (see GetCellIndex() to see how it is computed)

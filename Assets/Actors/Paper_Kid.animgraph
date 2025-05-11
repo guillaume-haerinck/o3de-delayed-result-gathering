@@ -1,0 +1,1340 @@
+<ObjectStream version="3">
+	<Class name="AnimGraph" version="2" type="{BD543125-CFEE-426C-B0AC-129F2A4C6BC8}">
+		<Class name="GroupParameter" field="rootGroupParameter" version="1" type="{6B42666E-82D7-431E-807E-DA789C53AF05}">
+			<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+				<Class name="AZStd::string" field="name" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+				<Class name="AZStd::string" field="description" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+			</Class>
+			<Class name="AZStd::vector&lt;Parameter*, allocator&gt;" field="childParameters" type="{496E6454-2F91-5CDC-9771-3B589F3F8FEB}">
+				<Class name="FloatSliderParameter" field="element" version="1" type="{2ED6BBAF-5C82-4EAA-8678-B220667254F2}">
+					<Class name="FloatParameter" field="BaseClass1" version="1" type="{0F0B8531-0B07-4D9B-A8AC-3A32D15E8762}">
+						<Class name="RangedValueParameter&lt;float, FloatParameter&gt;" field="BaseClass1" version="1" type="{01CABBF8-9500-5ABB-96BD-9989198146C2}">
+							<Class name="DefaultValueParameter&lt;float, RangedValueParameter&lt;float, FloatParameter&gt;&gt;" field="BaseClass1" version="1" type="{3221F118-9372-5BA3-BD8B-E88267CB356B}">
+								<Class name="ValueParameter" field="BaseClass1" version="1" type="{46549C79-6B4C-4DDE-A5E3-E5FBEC455816}">
+									<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+										<Class name="AZStd::string" field="name" value="Speed" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="AZStd::string" field="description" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+									</Class>
+								</Class>
+								<Class name="float" field="defaultValue" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							</Class>
+							<Class name="bool" field="hasMinValue" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="float" field="minValue" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="bool" field="hasMaxValue" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="float" field="maxValue" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+						</Class>
+					</Class>
+				</Class>
+				<Class name="FloatSliderParameter" field="element" version="1" type="{2ED6BBAF-5C82-4EAA-8678-B220667254F2}">
+					<Class name="FloatParameter" field="BaseClass1" version="1" type="{0F0B8531-0B07-4D9B-A8AC-3A32D15E8762}">
+						<Class name="RangedValueParameter&lt;float, FloatParameter&gt;" field="BaseClass1" version="1" type="{01CABBF8-9500-5ABB-96BD-9989198146C2}">
+							<Class name="DefaultValueParameter&lt;float, RangedValueParameter&lt;float, FloatParameter&gt;&gt;" field="BaseClass1" version="1" type="{3221F118-9372-5BA3-BD8B-E88267CB356B}">
+								<Class name="ValueParameter" field="BaseClass1" version="1" type="{46549C79-6B4C-4DDE-A5E3-E5FBEC455816}">
+									<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+										<Class name="AZStd::string" field="name" value="LateralMovement" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="AZStd::string" field="description" value="Lateral movement compared to player forward (-1 is left, +1 is right). Only valid when in Aim mode." type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+									</Class>
+								</Class>
+								<Class name="float" field="defaultValue" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							</Class>
+							<Class name="bool" field="hasMinValue" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="float" field="minValue" value="-1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="bool" field="hasMaxValue" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="float" field="maxValue" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+						</Class>
+					</Class>
+				</Class>
+				<Class name="BoolParameter" field="element" version="1" type="{1057BEFA-09A8-4B13-93CD-614BACF18106}">
+					<Class name="DefaultValueParameter&lt;bool, BoolParameter&gt;" field="BaseClass1" version="1" type="{BF567001-A21F-5B43-BCCB-C48CD436053C}">
+						<Class name="ValueParameter" field="BaseClass1" version="1" type="{46549C79-6B4C-4DDE-A5E3-E5FBEC455816}">
+							<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+								<Class name="AZStd::string" field="name" value="Aiming" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+								<Class name="AZStd::string" field="description" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							</Class>
+						</Class>
+						<Class name="bool" field="defaultValue" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					</Class>
+				</Class>
+				<Class name="BoolParameter" field="element" version="1" type="{1057BEFA-09A8-4B13-93CD-614BACF18106}">
+					<Class name="DefaultValueParameter&lt;bool, BoolParameter&gt;" field="BaseClass1" version="1" type="{BF567001-A21F-5B43-BCCB-C48CD436053C}">
+						<Class name="ValueParameter" field="BaseClass1" version="1" type="{46549C79-6B4C-4DDE-A5E3-E5FBEC455816}">
+							<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+								<Class name="AZStd::string" field="name" value="Jumping" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+								<Class name="AZStd::string" field="description" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							</Class>
+						</Class>
+						<Class name="bool" field="defaultValue" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					</Class>
+				</Class>
+				<Class name="BoolParameter" field="element" version="1" type="{1057BEFA-09A8-4B13-93CD-614BACF18106}">
+					<Class name="DefaultValueParameter&lt;bool, BoolParameter&gt;" field="BaseClass1" version="1" type="{BF567001-A21F-5B43-BCCB-C48CD436053C}">
+						<Class name="ValueParameter" field="BaseClass1" version="1" type="{46549C79-6B4C-4DDE-A5E3-E5FBEC455816}">
+							<Class name="Parameter" field="BaseClass1" version="1" type="{4AF0BAFC-98F8-4EA3-8946-4AD87D7F2A6C}">
+								<Class name="AZStd::string" field="name" value="Throwing" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+								<Class name="AZStd::string" field="description" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							</Class>
+						</Class>
+						<Class name="bool" field="defaultValue" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					</Class>
+				</Class>
+			</Class>
+		</Class>
+		<Class name="AnimGraphStateMachine" field="rootStateMachine" version="1" type="{272E90D2-8A18-46AF-AD82-6A8B7EC508ED}">
+			<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+				<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+				<Class name="AZ::u64" field="id" value="11685143697995960573" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+				<Class name="AZStd::string" field="name" value="Root" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+				<Class name="int" field="posX" value="0" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+				<Class name="int" field="posY" value="0" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+				<Class name="Color" field="visualizeColor" value="0.9019608 0.9411765 0.9803922 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+				<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+				<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+				<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+				<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}">
+					<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+						<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+							<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+							<Class name="AZ::u64" field="id" value="11064967781635113114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+							<Class name="AZStd::string" field="name" value="Jump" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							<Class name="int" field="posX" value="261" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+							<Class name="int" field="posY" value="380" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+							<Class name="Color" field="visualizeColor" value="0.8039216 0.3529412 0.4156863 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+							<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+							<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+							<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+								<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+							</Class>
+						</Class>
+						<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+							<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+								<Class name="AZStd::string" field="value1" value="jump" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+								<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							</Class>
+						</Class>
+						<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+						<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+						<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+						<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					</Class>
+					<Class name="BlendTree" field="element" version="1" type="{A8B5BB1E-5BA9-4B0A-88E9-21BB7A199ED2}">
+						<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+							<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+							<Class name="AZ::u64" field="id" value="17169166120149349609" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+							<Class name="AZStd::string" field="name" value="BlendTree0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							<Class name="int" field="posX" value="253" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+							<Class name="int" field="posY" value="480" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+							<Class name="Color" field="visualizeColor" value="0.9803922 1.0000000 0.9607844 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+							<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+							<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}">
+								<Class name="BlendTreeFinalNode" field="element" version="1" type="{1A755218-AD9D-48EA-86FC-D571C11ECA4D}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="16481075165079066789" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="FinalNode2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="931" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-100" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.0000000 0.3921569 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="1892429661106096769" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="7933256884972506520" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+										</Class>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="BlendTreeParameterNode" field="element" version="1" type="{4510529A-323F-40F6-B773-9FA8FC4DE53D}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="3933120105170211114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Parameters2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-408" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-104" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.5960785 0.9843138 0.5960785 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, allocator&gt;" field="parameterNames" type="{99DAD0BC-740E-5E82-826B-8FC7968CC02C}"/>
+								</Class>
+								<Class name="BlendTreeBlendNNode" field="element" version="2" type="{CBFFDE41-008D-45A1-AC2A-E9A25C8CE62A}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="6836203520417546958" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="BlendN4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-129" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-360" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="1.0000000 0.0000000 1.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="4509636189943820589" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="3933120105170211114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="10" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="13614889904912327857" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="15310544389901969023" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="4" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="14567154063063200798" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="15310544389901969023" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="3" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="1324464390075296318" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="667255815280495129" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="3021859441695549407" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="667255815280495129" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="16848422723589958982" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="2687380073243509923" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+										</Class>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="AZStd::vector&lt;BlendNParamWeight, allocator&gt;" field="paramWeights" type="{8C3E9D3B-CC27-53F9-9462-1B726D8C099A}">
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.0500000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="1" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.4000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="2" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.6000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="3" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.8000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="4" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="667255815280495129" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Walk0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-438" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-344" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.8392158 0.4392157 0.8549020 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="15310544389901969023" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Run0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-438" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-254" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.0000000 0.5019608 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="fast run" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="2687380073243509923" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Idle0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-449" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-440" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.5294118 0.7215686 0.8705883 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="happy idle" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="BlendTreeBlendNNode" field="element" version="2" type="{CBFFDE41-008D-45A1-AC2A-E9A25C8CE62A}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="7079114204520360032" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="BlendN5" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="152" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="100" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.8039216 0.3529412 0.4156863 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="16332061357790839903" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="3215201308722108255" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="10" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="7891599780124594182" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="8162413542369321993" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="3754986424582860732" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="1217786892005449226" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="4" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="7580926942836135278" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="4379262378877768586" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="8419252276046220231" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="4379262378877768586" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="3" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="12218399419726678162" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="8162413542369321993" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+										</Class>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="AZStd::vector&lt;BlendNParamWeight, allocator&gt;" field="paramWeights" type="{8C3E9D3B-CC27-53F9-9462-1B726D8C099A}">
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="1" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.0200000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="2" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.1000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="3" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.6000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="4" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.8000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="BlendTreeParameterNode" field="element" version="1" type="{4510529A-323F-40F6-B773-9FA8FC4DE53D}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="3215201308722108255" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Parameters3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-388" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="370" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.8196079 0.8078432 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, allocator&gt;" field="parameterNames" type="{99DAD0BC-740E-5E82-826B-8FC7968CC02C}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="8880555869545703013" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Left Strafe0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-478" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="490" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.9019608 0.9411765 0.9803922 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="left strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="11141448081848024073" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Motion3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-468" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="580" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.1764706 0.3215686 0.6274510 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="fast run" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="BlendTreeBlendNNode" field="element" version="2" type="{CBFFDE41-008D-45A1-AC2A-E9A25C8CE62A}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="4379262378877768586" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="BlendN6" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-138" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="100" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.5019608 0.0000000 0.5019608 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="18161428606021138607" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="1504323846097625636" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="15745366226297892461" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="1675895254564200294" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="13005764630352608432" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="3215201308722108255" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="10" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="4118535895035924339" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="10347181788399000838" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="3" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="14419670621927236342" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="1504323846097625636" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+										</Class>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="AZStd::vector&lt;BlendNParamWeight, allocator&gt;" field="paramWeights" type="{8C3E9D3B-CC27-53F9-9462-1B726D8C099A}">
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="-1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="1" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="-0.2000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="2" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.2000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="3" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="1675895254564200294" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Left Strafe Walking0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-508" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="60" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.4196079 0.7176471 0.7411765 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="left strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="10347181788399000838" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Right Strafe Walking0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-498" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="240" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="1.0000000 0.0000000 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="right strafe walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="8162413542369321993" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Motion4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-178" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-80" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.5450981 0.0000000 0.5450981 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="happy idle" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="BlendTreeBlendNNode" field="element" version="2" type="{CBFFDE41-008D-45A1-AC2A-E9A25C8CE62A}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="1217786892005449226" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="BlendN7" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-138" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="520" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.8274511 0.3333333 0.7294118 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="16269446689420246579" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="8880555869545703013" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="16455714338822086573" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="11141448081848024073" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="12074609687883157944" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="3215201308722108255" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="10" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="16293922044482937083" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="5706951927239020012" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="3" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+											<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+												<Class name="AZ::u64" field="id" value="9463804154853972441" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="AZ::u64" field="sourceNodeId" value="11141448081848024073" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+												<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+											</Class>
+										</Class>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="AZStd::vector&lt;BlendNParamWeight, allocator&gt;" field="paramWeights" type="{8C3E9D3B-CC27-53F9-9462-1B726D8C099A}">
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="-1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="1" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="-0.2000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="2" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="0.2000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+										<Class name="BlendNParamWeight" field="element" version="1" type="{072E5508-B119-41DD-9915-717E750A984B}">
+											<Class name="unsigned int" field="portId" value="3" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+											<Class name="float" field="weightRange" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="1504323846097625636" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Motion5" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-468" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="150" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="1.0000000 0.0000000 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="walking" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="5706951927239020012" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Right Strafe0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="-488" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="670" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.4392157 0.0980392 0.0980392 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="right strafe" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+								<Class name="BlendTreeParameterNode" field="element" version="1" type="{4510529A-323F-40F6-B773-9FA8FC4DE53D}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="10519485305855314613" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Parameters4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="111" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="-130" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="1.0000000 0.7490196 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, allocator&gt;" field="parameterNames" type="{99DAD0BC-740E-5E82-826B-8FC7968CC02C}"/>
+								</Class>
+								<Class name="BlendTreeBlend2Node" field="element" version="1" type="{218AFAE7-C5A3-4E75-A69B-E4B0D67D5C7A}">
+									<Class name="BlendTreeBlend2NodeBase" field="BaseClass1" version="1" type="{7380C346-7568-42A5-BC1D-486646789717}">
+										<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+											<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+											<Class name="AZ::u64" field="id" value="11588899833137825012" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+											<Class name="AZStd::string" field="name" value="BlendTwo0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="int" field="posX" value="381" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+											<Class name="int" field="posY" value="-230" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+											<Class name="Color" field="visualizeColor" value="0.0000000 1.0000000 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+											<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+											<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="9314777709749498379" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="6836203520417546958" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="17233280690358652311" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="7079114204520360032" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="8144699597247947404" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="10519485305855314613" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+											</Class>
+											<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+												<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+											</Class>
+										</Class>
+										<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="unsigned char" field="extractionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="mask" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}"/>
+									</Class>
+								</Class>
+								<Class name="BlendTreeBlend2Node" field="element" version="1" type="{218AFAE7-C5A3-4E75-A69B-E4B0D67D5C7A}">
+									<Class name="BlendTreeBlend2NodeBase" field="BaseClass1" version="1" type="{7380C346-7568-42A5-BC1D-486646789717}">
+										<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+											<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+											<Class name="AZ::u64" field="id" value="7933256884972506520" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+											<Class name="AZStd::string" field="name" value="BlendTwo1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="int" field="posX" value="720" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+											<Class name="int" field="posY" value="-100" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+											<Class name="Color" field="visualizeColor" value="0.1960784 0.8039216 0.1960784 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+											<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+											<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+											<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}">
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="12119258612561567237" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="10519485305855314613" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="4" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="2" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="5109177353657215463" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="11588899833137825012" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+												<Class name="BlendTreeConnection" field="element" version="2" type="{B48FFEDB-87FB-4085-AE54-0302AC49373A}">
+													<Class name="AZ::u64" field="id" value="1193967033818827272" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="AZ::u64" field="sourceNodeId" value="1994645047061338413" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+													<Class name="unsigned short" field="sourcePortNr" value="0" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+													<Class name="unsigned short" field="targetPortNr" value="1" type="{ECA0B403-C4F8-4B86-95FC-81688D046E40}"/>
+												</Class>
+											</Class>
+											<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+												<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+											</Class>
+										</Class>
+										<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="unsigned char" field="eventMode" value="3" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="unsigned char" field="extractionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+										<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="mask" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftShoulder" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandThumb4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandThumb4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandThumb3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandThumb2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandIndex4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandIndex4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandIndex3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandIndex2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandMiddle4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandMiddle4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandMiddle3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandMiddle2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandRing4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandRing4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandRing3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandRing2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandPinky4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandPinky4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandPinky3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandPinky2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandThumb1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandIndex1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandMiddle1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandRing1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHandPinky1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftHand" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftForeArm" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:LeftArm" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandThumb4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandThumb4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandThumb3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandThumb2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandIndex4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandIndex4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandIndex3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandIndex2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandMiddle4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandMiddle4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandMiddle3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandMiddle2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandRing4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandRing4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandRing3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandRing2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandPinky4_end" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightShoulder" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightArm" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightForeArm" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHand" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandThumb1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandIndex1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandMiddle1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandRing1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandPinky1" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandPinky2" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandPinky3" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+											<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+												<Class name="AZStd::string" field="value1" value="mixamorig:RightHandPinky4" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+												<Class name="float" field="value2" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+											</Class>
+										</Class>
+									</Class>
+								</Class>
+								<Class name="AnimGraphMotionNode" field="element" version="3" type="{B8B8AAE6-E532-4BF8-898F-3D40AA41BC82}">
+									<Class name="AnimGraphNode" field="BaseClass1" version="2" type="{7F1C0E1D-4D32-4A6D-963C-20193EA28F95}">
+										<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+										<Class name="AZ::u64" field="id" value="1994645047061338413" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+										<Class name="AZStd::string" field="name" value="Throw" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+										<Class name="int" field="posX" value="401" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="int" field="posY" value="40" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+										<Class name="Color" field="visualizeColor" value="0.9803922 1.0000000 0.9607844 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
+										<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isCollapsed" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="bool" field="isVisEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+										<Class name="AZStd::vector&lt;AnimGraphNode*, allocator&gt;" field="childNodes" type="{E952D946-FF2C-5624-B72A-E02718B8CB09}"/>
+										<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+										<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+											<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+										</Class>
+									</Class>
+									<Class name="AZStd::vector&lt;AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;, allocator&gt;" field="motionIds" type="{134FD5CF-69EB-5AB1-8B2B-2AF461B7DFC5}">
+										<Class name="AZStd::pair&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, float&gt;" field="element" type="{E0838406-1905-5904-83F9-D2764B4402BC}">
+											<Class name="AZStd::string" field="value1" value="throw" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+											<Class name="float" field="value2" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+										</Class>
+									</Class>
+									<Class name="bool" field="loop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="retarget" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="reverse" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="emitEvents" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="mirrorMotion" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="motionExtraction" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="inPlace" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="float" field="playSpeed" value="2.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+									<Class name="unsigned char" field="indexMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+									<Class name="bool" field="nextMotionAfterLoop" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+									<Class name="bool" field="rewindOnZeroWeight" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+								</Class>
+							</Class>
+							<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+							<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+								<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+							</Class>
+						</Class>
+						<Class name="AZ::u64" field="finalNodeId" value="16481075165079066789" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					</Class>
+				</Class>
+				<Class name="AZStd::vector&lt;BlendTreeConnection*, allocator&gt;" field="connections" type="{79810215-6320-5ED4-BA2C-CD3D5F2BFFE4}"/>
+				<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+					<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+				</Class>
+			</Class>
+			<Class name="AZ::u64" field="entryStateId" value="17169166120149349609" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+			<Class name="AZStd::vector&lt;AnimGraphStateTransition*, allocator&gt;" field="transitions" type="{7BE4AF47-DDD5-5B41-9BE0-6739C8A2694E}">
+				<Class name="AnimGraphStateTransition" field="element" version="4" type="{E69C8C6E-7066-43DD-B1BF-0D2FFBDDF457}">
+					<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+					<Class name="AZ::u64" field="id" value="13577549968997248786" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="AZ::u64" field="sourceNodeId" value="17169166120149349609" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="AZ::u64" field="targetNodeId" value="11064967781635113114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="bool" field="isWildcard" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="unsigned int" field="priority" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+					<Class name="bool" field="canBeInterruptedByOthers" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="AZStd::vector&lt;AZ::u64, allocator&gt;" field="canBeInterruptedByTransitionIds" type="{E7781CB0-E712-5E6A-948D-92FD4FE87F0D}"/>
+					<Class name="unsigned char" field="interruptionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="float" field="maxInterruptionBlendWeight" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="unsigned char" field="interruptionBlendBehavior" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="bool" field="canInterruptOtherTransitions" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="bool" field="allowSelfInterruption" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="AnimGraphStateTransition::StateFilterLocal" field="allowTransitionsFrom" version="1" type="{591DDCDE-F85D-4F35-957F-F2428ADE8579}">
+						<Class name="AZStd::vector&lt;AZ::u64, allocator&gt;" field="stateIds" type="{E7781CB0-E712-5E6A-948D-92FD4FE87F0D}"/>
+						<Class name="AZStd::vector&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, allocator&gt;" field="nodeGroupNames" type="{99DAD0BC-740E-5E82-826B-8FC7968CC02C}"/>
+					</Class>
+					<Class name="float" field="transitionTime" value="0.3000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="unsigned char" field="eventMode" value="2" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="unsigned char" field="interpolationType" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="float" field="easeInSmoothness" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="float" field="easeOutSmoothness" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="int" field="startOffsetX" value="32" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="startOffsetY" value="5" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="endOffsetX" value="22" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="endOffsetY" value="38" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="AZStd::vector&lt;AnimGraphTransitionCondition*, allocator&gt;" field="conditions" type="{FE5F2CF7-E8D4-5233-BC60-F6FAFA92271D}">
+						<Class name="AnimGraphParameterCondition" field="element" version="2" type="{458D0D08-3F1E-4116-89FC-50F447EDC84E}">
+							<Class name="AnimGraphTransitionCondition" field="BaseClass1" version="1" type="{DD14D0C7-AC88-4F90-BB4C-0F6810A6BAE7}">
+								<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+							</Class>
+							<Class name="AZStd::string" field="parameterName" value="Jumping" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+							<Class name="unsigned char" field="function" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+							<Class name="float" field="testValue" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="float" field="rangeValue" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="float" field="timeRequirement" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="unsigned char" field="stringFunction" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+							<Class name="AZStd::string" field="testString" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+						</Class>
+					</Class>
+					<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+						<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+					</Class>
+					<Class name="unsigned char" field="extractionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+				</Class>
+				<Class name="AnimGraphStateTransition" field="element" version="4" type="{E69C8C6E-7066-43DD-B1BF-0D2FFBDDF457}">
+					<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+					<Class name="AZ::u64" field="id" value="13386583124802458209" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="AZ::u64" field="sourceNodeId" value="11064967781635113114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="AZ::u64" field="targetNodeId" value="17169166120149349609" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+					<Class name="bool" field="isWildcard" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="bool" field="isDisabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="unsigned int" field="priority" value="0" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+					<Class name="bool" field="canBeInterruptedByOthers" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="AZStd::vector&lt;AZ::u64, allocator&gt;" field="canBeInterruptedByTransitionIds" type="{E7781CB0-E712-5E6A-948D-92FD4FE87F0D}"/>
+					<Class name="unsigned char" field="interruptionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="float" field="maxInterruptionBlendWeight" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="unsigned char" field="interruptionBlendBehavior" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="bool" field="canInterruptOtherTransitions" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="bool" field="allowSelfInterruption" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+					<Class name="AnimGraphStateTransition::StateFilterLocal" field="allowTransitionsFrom" version="1" type="{591DDCDE-F85D-4F35-957F-F2428ADE8579}">
+						<Class name="AZStd::vector&lt;AZ::u64, allocator&gt;" field="stateIds" type="{E7781CB0-E712-5E6A-948D-92FD4FE87F0D}"/>
+						<Class name="AZStd::vector&lt;AZStd::basic_string&lt;char, AZStd::char_traits&lt;char&gt;, allocator&gt;, allocator&gt;" field="nodeGroupNames" type="{99DAD0BC-740E-5E82-826B-8FC7968CC02C}"/>
+					</Class>
+					<Class name="float" field="transitionTime" value="0.3000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="unsigned char" field="syncMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="unsigned char" field="eventMode" value="2" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="unsigned char" field="interpolationType" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+					<Class name="float" field="easeInSmoothness" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="float" field="easeOutSmoothness" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+					<Class name="int" field="startOffsetX" value="83" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="startOffsetY" value="36" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="endOffsetX" value="93" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="int" field="endOffsetY" value="10" type="{72039442-EB38-4D42-A1AD-CB68F7E0EEF6}"/>
+					<Class name="AZStd::vector&lt;AnimGraphTransitionCondition*, allocator&gt;" field="conditions" type="{FE5F2CF7-E8D4-5233-BC60-F6FAFA92271D}">
+						<Class name="AnimGraphMotionCondition" field="element" version="2" type="{0E2EDE4E-BDEE-4383-AB18-208CE7F7A784}">
+							<Class name="AnimGraphTransitionCondition" field="BaseClass1" version="1" type="{DD14D0C7-AC88-4F90-BB4C-0F6810A6BAE7}">
+								<Class name="AnimGraphObject" field="BaseClass1" version="1" type="{532F5328-9AE3-4793-A7AA-8DEB0BAC9A9E}"/>
+							</Class>
+							<Class name="AZ::u64" field="motionNodeId" value="11064967781635113114" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
+							<Class name="unsigned char" field="testFunction" value="1" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+							<Class name="unsigned int" field="numLoops" value="1" type="{43DA906B-7DEF-4CA8-9790-854106D3F983}"/>
+							<Class name="float" field="playTime" value="0.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
+							<Class name="AZStd::vector&lt;AZStd::shared_ptr&lt;const EventData&gt;, allocator&gt;" field="eventDatas" type="{4918F644-6F31-5DC0-92CC-471D16563C8A}"/>
+						</Class>
+					</Class>
+					<Class name="TriggerActionSetup" field="actionSetup" version="1" type="{7B4E270C-2C7F-41C4-BFA5-FE6104B789BF}">
+						<Class name="AZStd::vector&lt;AnimGraphTriggerAction*, allocator&gt;" field="actions" type="{51C7563D-C7C7-5975-9359-21A4869DE695}"/>
+					</Class>
+					<Class name="unsigned char" field="extractionMode" value="0" type="{72B9409A-7D1A-4831-9CFE-FCB3FADD3426}"/>
+				</Class>
+			</Class>
+			<Class name="bool" field="alwaysStartInEntryState" value="true" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+		</Class>
+		<Class name="AZStd::vector&lt;AnimGraphNodeGroup*, allocator&gt;" field="nodeGroups" type="{9A7148E6-1DCA-5BDA-80D7-5FF35D43170E}"/>
+		<Class name="bool" field="retarget" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
+	</Class>
+</ObjectStream>
+

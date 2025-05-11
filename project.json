@@ -28,6 +28,7 @@
         "PrefabBuilder",
         "PrimitiveAssets",
         "RemoteTools",
+        "ScriptCanvasPhysics",
         "ScriptEvents",
         "StartingPointCamera",
         "StartingPointInput",

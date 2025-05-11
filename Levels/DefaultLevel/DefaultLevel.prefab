@@ -71,8 +71,7 @@
             "Components": {
                 "Component_[13620450453324765907]": {
                     "$type": "EditorLockComponent",
-                    "Id": 13620450453324765907,
-                    "Locked": true
+                    "Id": 13620450453324765907
                 },
                 "Component_[2134313378593666258]": {
                     "$type": "EditorInspectorComponent",
@@ -223,8 +222,7 @@
                 },
                 "Component_[14988041764659020032]": {
                     "$type": "EditorLockComponent",
-                    "Id": 14988041764659020032,
-                    "Locked": true
+                    "Id": 14988041764659020032
                 },
                 "Component_[15900837685796817138]": {
                     "$type": "EditorVisibilityComponent",
@@ -277,8 +275,7 @@
                 },
                 "Component_[1428633914413949476]": {
                     "$type": "EditorLockComponent",
-                    "Id": 1428633914413949476,
-                    "Locked": true
+                    "Id": 1428633914413949476
                 },
                 "Component_[14936200426671614999]": {
                     "$type": "AZ::Render::EditorImageBasedLightComponent",

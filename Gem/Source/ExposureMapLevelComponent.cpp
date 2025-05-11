@@ -40,7 +40,11 @@ namespace DelayedResultGathering
 
     void ExposureMapLevelComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
-        BuildGrid();
+        if (m_gridNeedRebuild)
+        {
+            m_gridNeedRebuild = false;
+            BuildGrid();
+        }
         DebugDrawExposureMap();
     }
 
@@ -59,7 +63,7 @@ namespace DelayedResultGathering
 
             AZ::Aabb aabb = AZ::Aabb::CreateCenterHalfExtents(center, AZ::Vector3(m_cellSize / 2.2f, m_cellSize / 2.2f, 0.01f));
             const bool isExposed = m_isPositionExposedMap[cellIndex];
-            const AZ::Color color = isExposed ? AZ::Color::CreateFromRgba(255, 0, 0, 200) : AZ::Color::CreateFromRgba(0, 255, 0, 200);
+            const AZ::Color color = isExposed ? AZ::Color::CreateFromRgba(255, 0, 0, 100) : AZ::Color::CreateFromRgba(0, 255, 0, 100);
             constexpr float duration = 0.f; // One frame
             DebugDraw::DebugDrawRequestBus::Broadcast(&DebugDraw::DebugDrawRequests::DrawAabb, aabb, color, duration);
         }
