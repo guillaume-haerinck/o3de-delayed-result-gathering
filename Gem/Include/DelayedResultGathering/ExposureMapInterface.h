@@ -20,7 +20,7 @@ namespace DelayedResultGathering
         virtual ~ExposureMapInterface() = default;
 
         virtual bool IsPositionExposed(const AZ::Vector3& position) const = 0;
-        virtual bool FindNearestNonExposedPosition(const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const = 0;
+        virtual bool FindNearestNonExposedPosition(const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) = 0;
     };
 
 } // namespace DelayedResultGathering

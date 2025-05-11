@@ -77,7 +77,7 @@ namespace DelayedResultGathering
 
             // Proceed to the current target position
             const AZ::Vector3& distance = m_pathToTarget.back() - currentPosition;
-            constexpr float tolerance = 0.4f;
+            constexpr float tolerance = 0.1f; // 10cm
             const bool hasReachedDestination = distance.GetLength() < tolerance;
             if (hasReachedDestination)
             {
@@ -93,7 +93,7 @@ namespace DelayedResultGathering
             return;
         }
 
-        const ExposureMapInterface* exposureMap = AZ::Interface<ExposureMapInterface>::Get();
+        ExposureMapInterface* exposureMap = AZ::Interface<ExposureMapInterface>::Get();
         if (!exposureMap)
         {
             assert(false);
@@ -120,6 +120,18 @@ namespace DelayedResultGathering
             &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions,
             newPosition,
             currentPosition);
+
+        if (m_pathToTarget.empty())
+        {
+            AZ::Vector3 textPos = newPosition;
+            newPosition.SetZ(4.f);
+            DebugDraw::DebugDrawRequestBus::Broadcast(
+                &DebugDraw::DebugDrawRequests::DrawTextAtLocation,
+                textPos,
+                "Pathfinding Failed !",
+                AZ::Color::CreateFromRgba(255, 255, 125, 200),
+                0.5f);
+        }
     }
 
     void MoveToHideout_BehaviorComponent::Activate()

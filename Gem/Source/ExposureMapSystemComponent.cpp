@@ -11,6 +11,7 @@
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/std/limits.h>
+#include <AzFramework/Physics/CharacterBus.h>
 #include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
 #include <AzFramework/Physics/Common/PhysicsTypes.h>
 #include <AzFramework/Physics/PhysicsScene.h>
@@ -57,7 +58,7 @@ namespace DelayedResultGathering
     void ExposureMapSystemComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint timePoint)
     {
         // #GH_TODO find an event to know when we are in game, we only want to rebuild the grid once we are in game
-       // if (m_gridNeedRebuild)
+        // if (m_gridNeedRebuild)
         {
             m_gridNeedRebuild = false;
             BuildGrid();
@@ -73,17 +74,17 @@ namespace DelayedResultGathering
             return;
         }
 
-        AZ::Vector3 eyePosition;
+        AZ::Vector3 playerPosition;
         const AZ::EntityId& playerId = aggregator.values[0];
-        AZ::TransformBus::EventResult(eyePosition, playerId, &AZ::TransformBus::Events::GetWorldTranslation);
+        Physics::CharacterRequestBus::EventResult(playerPosition, playerId, &Physics::CharacterRequests::GetBasePosition);
 
         // Position is at the feet and the player is around 2 meter tall
+        AZ::Vector3 eyePosition = playerPosition;
         eyePosition.SetZ(eyePosition.GetZ() + 1.9f);
 
         // #GH_TODO switch case for all the types
         UpdateExposure_SingleThreaded(eyePosition);
 
-        UpdateDistanceToSentinelMap(eyePosition);
         DebugDrawExposureMap();
     }
 
@@ -100,9 +101,9 @@ namespace DelayedResultGathering
     }
 
     bool ExposureMapSystemComponent::FindNearestNonExposedPosition(
-        [[maybe_unused]] const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const
+        [[maybe_unused]] const AZ::Vector3& currentPosition, AZ::Vector3& positionOut)
     {
-        // #GH_TODO not using the position, so we just return the closest to the sentinel ?
+        UpdateDistanceToEnemyMap(currentPosition);
 
         // This search is sub-optimal and will badly scale as grid size increase, using an octree would be way more efficient
         float bestPathLength = AZStd::numeric_limits<float>::max();
@@ -118,17 +119,24 @@ namespace DelayedResultGathering
             if (m_isPositionObstructedMap[cellIndex])
                 continue;
 
-            const float pathLength = m_distanceToSentinelMap[cellIndex];
-            if (pathLength >= bestPathLength)
+            const float pathLength = m_distanceToEnemyMap[cellIndex];
+            constexpr float minDistance = 10.f; // We want the enemy to move away, not turn around a cube
+            if (pathLength < minDistance || pathLength >= bestPathLength)
                 continue;
 
             bestPathLength = pathLength;
             bestCellIndex = cellIndex;
             found = true;
         }
+        
+        if (!found)
+        {
+            positionOut = currentPosition;
+            return false;
+        }
 
         positionOut = m_grid[bestCellIndex];
-        return found;
+        return true;
     }
 
     void ExposureMapSystemComponent::DebugDrawExposureMap()
@@ -152,33 +160,42 @@ namespace DelayedResultGathering
         }
     }
 
-    void ExposureMapSystemComponent::UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition)
+    void ExposureMapSystemComponent::UpdateDistanceToEnemyMap(const AZ::Vector3& enemyPosition)
     {
         const uint16_t cellCount = ComputeCellCount();
         for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
         {
+            if (m_isPositionObstructedMap[cellIndex])
+                continue;
+
             const AZ::Vector3& cellPosition = m_grid[cellIndex];
 
+            // #GH_TODO it always fails, maybe that the caller needs to have a detour navigation component
             AZStd::vector<AZ::Vector3> path;
             RecastNavigation::DetourNavigationRequestBus::EventResult(
                 path,
                 GetEntityId(),
                 &RecastNavigation::DetourNavigationRequestBus::Events::FindPathBetweenPositions,
-                sentinelPosition,
+                enemyPosition,
                 cellPosition);
 
             float totalDistance = 0.f;
-            for (size_t i = 0; i < path.size(); ++i)
+            if (path.empty())
+                totalDistance = (cellPosition - enemyPosition).GetLength(); // Fallback if pathfinding failed
+            else
             {
-                const bool isLast = i == path.size() - 1;
-                if (isLast)
+                for (size_t i = 0; i < path.size(); ++i)
                 {
-                    continue;
+                    const bool isLast = i == path.size() - 1;
+                    if (isLast)
+                    {
+                        continue;
+                    }
+                    totalDistance += (path[i] - path[i + 1]).GetLength();
                 }
-                totalDistance += (path[i] - path[i + 1]).GetLength();
             }
 
-            m_distanceToSentinelMap[cellIndex] = totalDistance;
+            m_distanceToEnemyMap[cellIndex] = totalDistance;
         }
     }
 
@@ -243,7 +260,7 @@ namespace DelayedResultGathering
     {
         const uint16_t cellCount = ComputeCellCount();
         m_grid.resize(cellCount);
-        m_distanceToSentinelMap.resize(cellCount);
+        m_distanceToEnemyMap.resize(cellCount);
         m_isPositionObstructedMap.resize(cellCount);
         m_isPositionExposedMap.resize(cellCount);
 
@@ -272,7 +289,7 @@ namespace DelayedResultGathering
                 const bool hasHit = result && result.m_hits[0].IsValid();
 
                 m_grid[cellIndex] = center;
-                m_distanceToSentinelMap[cellIndex] = AZStd::numeric_limits<float>::max();
+                m_distanceToEnemyMap[cellIndex] = AZStd::numeric_limits<float>::max();
                 m_isPositionObstructedMap[cellIndex] = hasHit;
                 m_isPositionExposedMap[cellIndex] = false;
             }

@@ -45,7 +45,7 @@ namespace DelayedResultGathering
 
         //! ExposureMapInterface overrides
         bool IsPositionExposed(const AZ::Vector3& position) const override;
-        bool FindNearestNonExposedPosition(const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) const override;
+        bool FindNearestNonExposedPosition(const AZ::Vector3& currentPosition, AZ::Vector3& positionOut) override;
 
     private:
         // AZ::Component overrides
@@ -67,7 +67,7 @@ namespace DelayedResultGathering
         void BuildGrid();
         void DebugDrawExposureMap();
 
-        void UpdateDistanceToSentinelMap(const AZ::Vector3& sentinelPosition);
+        void UpdateDistanceToEnemyMap(const AZ::Vector3& enemyPosition);
 
         void UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition);
 
@@ -79,7 +79,7 @@ namespace DelayedResultGathering
         // All vectors below are of the same size with grid being source of truth.
         // Index in array represent a 2D position (see ComputeCellIndex() to see how it is computed)
         AZStd::vector<AZ::Vector3> m_grid; // A 2D grid which covers the current level. The 2D position stored is the center of the cell
-        AZStd::vector<float> m_distanceToSentinelMap; // For each position, distance from self to sentinel
+        AZStd::vector<float> m_distanceToEnemyMap; // For each position, distance from cell to enemy
         AZStd::vector<bool> m_isPositionObstructedMap; // For each position, true if obstructed by an obstacle
         AZStd::vector<bool> m_isPositionExposedMap; // For each position, true if visible by a sentinel POV
     };
