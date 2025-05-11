@@ -1,0 +1,14 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.44895094633102417,
+            0.44895094633102417,
+            0.44895094633102417,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "LinearLight",
+        "baseColor.textureMap": "@gemroot:Atom_Feature_Common@/Assets/Textures/Default/checker_basecolor.tif"
+    }
+}

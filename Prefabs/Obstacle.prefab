@@ -54,6 +54,57 @@
             "Id": "Entity_[1049981609836]",
             "Name": "Obstacle",
             "Components": {
+                "AZ::Render::EditorMeshComponent": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 7789433660984982725,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{CB2F5DCF-0FE0-59C7-A552-50F9C7BA56C8}",
+                                    "subId": 285127096
+                                },
+                                "assetHint": "assets/geometry/cube.obj.azmodel"
+                            }
+                        }
+                    }
+                },
+                "EditorColliderComponent": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 8524099504035674468,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
+                        "Position": [
+                            -0.005406796932220459,
+                            -0.014553338289260864,
+                            0.508490800857544
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Scale": [
+                                1.7999999523162842,
+                                1.7999999523162842,
+                                1.7999999523162842
+                            ],
+                            "Configuration": [
+                                1.0930531024932861,
+                                1.156038761138916,
+                                1.1179144382476807
+                            ]
+                        }
+                    }
+                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 10040581322231171135
@@ -74,6 +125,24 @@
                     "$type": "EditorLockComponent",
                     "Id": 17588527656601255401
                 },
+                "EditorMaterialComponent": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8669595424862873560,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": {
+                                "{}": {
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{B73BBD32-3482-5B82-A176-3FB4D642415F}"
+                                        },
+                                        "assetHint": "assets/materials/obstacle.azmaterial"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 922395102122687338
@@ -82,520 +151,13 @@
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 15198897205623385829
                 },
+                "EditorStaticRigidBodyComponent": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 2106555438208610293
+                },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 10742419560870862747
-                },
-                "EditorWhiteBoxColliderComponent": {
-                    "$type": "EditorWhiteBoxColliderComponent",
-                    "Id": 5473415999995159786,
-                    "Configuration": {
-                        "CollisionLayer": {
-                            "Index": 1
-                        },
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        },
-                        "propertyVisibilityFlags": 235
-                    },
-                    "MeshData": {
-                        "CookedData": "TlhTAU1FU0gPAAAAAAAAAAYAAAAIAAAADAAAAAAAAL8AAAC/7t+GPwAAAD8AAAC/7t+GPwAAAD8AAAA/7t+GPwAAAL8AAAA/7t+GPwAAAL8AAAA/YPUkvQAAAD8AAAA/YPUkvQAAAD8AAAC/YPUkvQAAAL8AAAC/YPUkvQcBAAcGAQQHAAQFBgQGBwQAAwUDAgUEAwYCAQYFAgACAwABAgsAAAAFBAoCAwsJCAcGAQBSVFJFAgAAAMUgAL/FIAC/qgEnvQAAAADFIAA/xSAAP1Dwhj8AAAAAAACAPwAAgD8AAIA/AACAP0UhgDdFIYA36SiMNwAAAAAEAAAAAQAAAAEAAAAEAAAAAQAAAAAAAADFIAC/xSAAv3e+/z7FIAC/xSAAv3e+/z7FIAC/xSAAv6oBJ72qASe9qgEnvYzPhj/FIAA/xSAAP8UgAD/FIAA/xSAAP8UgAD/FIAA/xSAAP1Dwhj9Q8IY/UPCGP1Dwhj8LAAAAwwAAAAMBAABDAQAA7t+GNAAAAL8AAAC/YPUkvQAAAD8AAAA/7t+GPwwAAAAwGBgYMDAwGDAYMBg="
-                    }
-                },
-                "EditorWhiteBoxComponent": {
-                    "$type": "EditorWhiteBoxComponent",
-                    "Id": 12648568239336185371,
-                    "WhiteBoxData": "T01UQggAAAAMAAAAEgAAAAAWAAAAvwAAAL/u34Y/AAAAPwAAAL/u34Y/AAAAPwAAAD/u34Y/AAAAvwAAAD/u34Y/AAAAvwAAAL9g9SS9AAAAPwAAAL9g9SS9AAAAPwAAAD9g9SS9AAAAvwAAAD9g9SS9+BYCAQAYAAUEAgAVAQcAAAAGAgEIAwEbAgkFAAEfAwsMBgIeBwgOBQIaBgYKBwIQBQMSBAMUBQQPBwMZBAoWAQQdBQcRBAQBAQUXBAUiAAocAgYhBgkNBQYDAgcgAwgjBwsLBggHAwkTBwoJAAtYDgAAAAAAAIA/AACAP9y/Db8AAAAAAAAAANy/Db8AAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAANy/Db8AAIA/AACAP9y/Db8AAAAAAAAAAAAAAAAAAIA/Vk8KPwAAAAAAAIA/Vk8KPwAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAVk8KPwAAgD8AAAAAVk8KPwAAgD8AAAAA3L8Nv1ZPCj8AAIA/AACAP1ZPCj8AAAAA3L8NvwAAgD9WTwo/3L8NvwAAgD/cvw2/AAAAAAAAAABWTwo/Vk8KPwAAgD/cvw2/AAAAAAAAgD/cvw2/Vk8KPwAAAAAAAAAAVk8KPwAAgD/cvw2/Vk8KPwAAAADcvw2/AACAP+AGCRUbHxkdISPoBgQIDhIWGBwVIBsiHygWAAAAAAAAAIAAAIA/AAAAAAAAAAAAAIA/AAAAgAAAAIAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAgL8AAAAAAAAAgAAAgL8AAAAAAACAPwAAAAAAAACAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAgAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAwsATdmVydGV4LWhpZGRlbi1wcm9wcwRib29sAQAAAADGwA1wb2x5Z29uLXByb3BzIldoaXRlQm94OjpGYWNlSGFuZGxlUG9seWdvbk1hcHBpbmfEAAAADAAAAAYAAAACAAAABgAAAAcAAAAFAAAAAgAAAAQAAAAFAAAABAAAAAIAAAAEAAAABQAAAAsAAAACAAAACgAAAAsAAAADAAAAAgAAAAIAAAADAAAACgAAAAIAAAAKAAAACwAAAAIAAAACAAAAAgAAAAMAAAAJAAAAAgAAAAgAAAAJAAAAAQAAAAIAAAAAAAAAAQAAAAgAAAACAAAACAAAAAkAAAAAAAAAAgAAAAAAAAABAAAABwAAAAIAAAAGAAAABwAAABwA",
-                    "Material": {
-                        "Tint": [
-                            0.18367284536361694,
-                            0.18367284536361694,
-                            0.18367284536361694
-                        ]
-                    },
-                    "RenderData": {
-                        "Faces": [
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    -0.0,
-                                    1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.0
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    0.0,
-                                    1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    -0.0,
-                                    -1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    0.0,
-                                    -1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    -1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    -1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        0.0
-                                    ]
-                                },
-                                "Normal": [
-                                    1.0,
-                                    0.0,
-                                    -0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        0.5402730703353882
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        0.0,
-                                        -0.5537087917327881
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        -0.040273070335388184
-                                    ],
-                                    "UV": [
-                                        0.5402730703353882,
-                                        0.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        0.5,
-                                        1.053708791732788
-                                    ],
-                                    "UV": [
-                                        -0.5537087917327881,
-                                        0.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            }
-                        ],
-                        "Material": {
-                            "Tint": [
-                                0.18367284536361694,
-                                0.18367284536361694,
-                                0.18367284536361694
-                            ]
-                        }
-                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",

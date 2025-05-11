@@ -194,10 +194,10 @@
                         "Configuration": {
                             "CubemapAsset": {
                                 "assetId": {
-                                    "guid": "{215E47FD-D181-5832-B1AB-91673ABF6399}",
+                                    "guid": "{8FB1DF40-B02F-53F4-BD4D-5F2B90B41E5B}",
                                     "subId": 1000
                                 },
-                                "assetHint": "lightingpresets/highcontrast/goegap_4k_skyboxcm.exr.streamingimage"
+                                "assetHint": "assets/textures/background_skyboxcm.png.streamingimage"
                             }
                         }
                     }
@@ -213,33 +213,33 @@
                         "Configuration": {
                             "diffuseImageAsset": {
                                 "assetId": {
-                                    "guid": "{3FD09945-D0F2-55C8-B9AF-B2FD421FE3BE}",
+                                    "guid": "{DD355CE9-28AC-5F1D-8539-6F8B282436F1}",
                                     "subId": 3000
                                 },
-                                "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_ibldiffuse.exr.streamingimage"
+                                "assetHint": "assets/textures/background_iblglobalcm_ibldiffuse.png.streamingimage"
                             },
                             "specularImageAsset": {
                                 "assetId": {
-                                    "guid": "{3FD09945-D0F2-55C8-B9AF-B2FD421FE3BE}",
+                                    "guid": "{DD355CE9-28AC-5F1D-8539-6F8B282436F1}",
                                     "subId": 2000
                                 },
-                                "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_iblspecular.exr.streamingimage"
+                                "assetHint": "assets/textures/background_iblglobalcm_iblspecular.png.streamingimage"
                             }
                         }
                     },
                     "diffuseImageAsset": {
                         "assetId": {
-                            "guid": "{3FD09945-D0F2-55C8-B9AF-B2FD421FE3BE}",
+                            "guid": "{DD355CE9-28AC-5F1D-8539-6F8B282436F1}",
                             "subId": 3000
                         },
-                        "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_ibldiffuse.exr.streamingimage"
+                        "assetHint": "assets/textures/background_iblglobalcm_ibldiffuse.png.streamingimage"
                     },
                     "specularImageAsset": {
                         "assetId": {
-                            "guid": "{3FD09945-D0F2-55C8-B9AF-B2FD421FE3BE}",
+                            "guid": "{DD355CE9-28AC-5F1D-8539-6F8B282436F1}",
                             "subId": 2000
                         },
-                        "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_iblspecular.exr.streamingimage"
+                        "assetHint": "assets/textures/background_iblglobalcm_iblspecular.png.streamingimage"
                     }
                 },
                 "Component_[14994774102579326069]": {
@@ -281,6 +281,52 @@
             "Id": "Entity_[1443545786432]",
             "Name": "Ground",
             "Components": {
+                "AZ::Render::EditorMeshComponent": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 3524844940110302174,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{83547508-63D1-5111-9EEC-F31D1AFC8FD4}",
+                                    "subId": 280178048
+                                },
+                                "assetHint": "assets/geometry/plane.obj.azmodel"
+                            }
+                        }
+                    }
+                },
+                "EditorColliderComponent": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 11779457237760062026,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
+                        "Position": [
+                            19.994060516357422,
+                            20.008724212646484,
+                            -0.36135005950927734
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                40.988121032714844,
+                                41.01744842529297,
+                                0.2772998809814453
+                            ]
+                        }
+                    }
+                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 3492471354701791691
@@ -301,6 +347,23 @@
                     "$type": "EditorLockComponent",
                     "Id": 10939035067835900299
                 },
+                "EditorMaterialComponent": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 12736398574007999610,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": {
+                                "{}": {
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{02C0493A-658A-56BB-9A79-0ACB066FCF63}"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 300973567041370205
@@ -309,518 +372,13 @@
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 416449378125981662
                 },
+                "EditorStaticRigidBodyComponent": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 12886721033427630465
+                },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 7531721042417522815
-                },
-                "EditorWhiteBoxColliderComponent": {
-                    "$type": "EditorWhiteBoxColliderComponent",
-                    "Id": 9982045363275751264,
-                    "Configuration": {
-                        "CollisionLayer": {
-                            "Index": 1
-                        },
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        },
-                        "propertyVisibilityFlags": 235
-                    },
-                    "MeshData": {
-                        "CookedData": "TlhTAU1FU0gPAAAAAAAAAAYAAAAIAAAADAAAAAAAAL8AAAC/MEyIvgAAIkIAAAC/MEyIvgAAIkIAACJCMEyIvgAAAL8AACJCMEyIvgAAAL8AACJCAAAAvwAAIkIAACJCAAAAvwAAIkIAAAC/AAAAvwAAAL8AAAC/AAAAvwcBAAQHAAQAAwQFBgQGBwcGAQACAwABAgUDAgUEAwYCAQYFAgsAAAAFCgsCAwQBAAkIBwZSVFJFAgAAAMUgAL/FIAC/xSAAvwAAAACDACJCgwAiQqcKiL4AAAAAAACAPwAAgD8AAIA/AACAP6oBJDqqASQ6tm5wNgAAAAAEAAAAAQAAAAIAAAAIAAAAAgAAAAAAAADFIAC/xSAAv8UgAL99/yFCxSAAv8UgAL99/yFCxSAAv8UgAL+5jYi+xSAAv8UgAL+DACJCgwAiQoMAIkKDACJCgwAiQoMAIkKDACJCgwAiQqcKiL6nCoi+pwqIvqcKiL5wAAAAwwAAAAMBAABDAQAAxSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/gwAiQne+/76DACJCgwAiQne+/76DACJCgwAiQne+/76nCoi+pwqIvne+/76nCoi+AQAAACMAAABjAAAAoQAAAAAAIjcAAAC/AAAAvwAAAL8AACJCAAAiQjBMiL4MAAAAMBgwGDAYMBgwGDAY"
-                    }
-                },
-                "EditorWhiteBoxComponent": {
-                    "$type": "EditorWhiteBoxComponent",
-                    "Id": 15952766410923566735,
-                    "WhiteBoxData": "T01UQggAAAAMAAAAEgAAAAAWAAAAvwAAAL8wTIi+AAAiQgAAAL8wTIi+AAAiQgAAIkIwTIi+AAAAvwAAIkIwTIi+AAAAvwAAAL8AAAC/AAAiQgAAAL8AAAC/AAAiQgAAIkIAAAC/AAAAvwAAIkIAAAC/+BYCAQAYAAUEAgAVAQcAAAAGAgEIAwEbAgkFAAEfAwsMBgIeBwgOBQIaBgYKBwIQBQMSBAMUBQQPBwMZBAoWAQQdBQcRBAQBAQUXBAUiAAocAgYhBgkNBQYDAgcgAwgjBwsLBggHAwkTBwoJAAtYDgAAIMIAAIA/AACAPxgmRD8AACDCAAAgwhgmRD8AAIA/AACAPwAAgD8AACDCAAAgwgAAgD8AACDCAAAgwhgmRD8AAIA/AACAPxgmRD8AACDCAAAgwgAAIMIAAIA/AACAPwAAIMIAAIA/AACAPwAAIMIAAIA/AAAgwgAAIMIAAIA/AACAPwAAgD8AACDCAACAPwAAgD8AACDCAACAPwAAgD8AACDCGCZEPwAAgD8AAIA/AACAPwAAgD8AACDCGCZEPwAAgD8AAIA/GCZEPwAAgD8YJkQ/AAAgwgAAIMIAAIA/AACAPwAAgD8YJkQ/AAAgwgAAgD8YJkQ/AACAPwAAIMIAACDCAACAPwAAgD8YJkQ/AACAPwAAIMIYJkQ/AACAP+AGCRUbHxkdISPoBgQIDhIWGBwVIBsiHygWAAAAAAAAAIAAAIA/AAAAAAAAAAAAAIA/AAAAgAAAAIAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAgL8AAAAAAAAAgAAAgL8AAAAAAACAPwAAAAAAAACAAACAPwAAAAAAAAAAAAAAAAAAgD8AAAAAAAAAgAAAgD8AAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAwsATdmVydGV4LWhpZGRlbi1wcm9wcwRib29sAQAAAADGwA1wb2x5Z29uLXByb3BzIldoaXRlQm94OjpGYWNlSGFuZGxlUG9seWdvbk1hcHBpbmfEAAAADAAAAAYAAAACAAAABgAAAAcAAAAFAAAAAgAAAAQAAAAFAAAABAAAAAIAAAAEAAAABQAAAAsAAAACAAAACgAAAAsAAAADAAAAAgAAAAIAAAADAAAACgAAAAIAAAAKAAAACwAAAAIAAAACAAAAAgAAAAMAAAAJAAAAAgAAAAgAAAAJAAAAAQAAAAIAAAAAAAAAAQAAAAgAAAACAAAACAAAAAkAAAAAAAAAAgAAAAAAAAABAAAABwAAAAIAAAAGAAAABwAAABwA",
-                    "RenderData": {
-                        "Faces": [
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    -0.0,
-                                    1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    0.0,
-                                    1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    -0.0,
-                                    -1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    0.0,
-                                    -1.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    -1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    -1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        -40.0
-                                    ]
-                                },
-                                "Normal": [
-                                    1.0,
-                                    0.0,
-                                    -0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Normal": [
-                                    0.0,
-                                    1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        40.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        -40.0,
-                                        0.7662062644958496
-                                    ]
-                                },
-                                "Normal": [
-                                    -0.0,
-                                    1.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        1.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            },
-                            {
-                                "Vertex1": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.5
-                                    ],
-                                    "UV": [
-                                        1.0,
-                                        -40.0
-                                    ]
-                                },
-                                "Vertex2": {
-                                    "Position": [
-                                        -0.5,
-                                        -0.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        1.0
-                                    ]
-                                },
-                                "Vertex3": {
-                                    "Position": [
-                                        -0.5,
-                                        40.5,
-                                        -0.2662062644958496
-                                    ],
-                                    "UV": [
-                                        0.7662062644958496,
-                                        -40.0
-                                    ]
-                                },
-                                "Normal": [
-                                    -1.0,
-                                    0.0,
-                                    0.0
-                                ]
-                            }
-                        ]
-                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -935,20 +493,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -967,20 +511,6 @@
         "Instance_[1122996053868]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1015,56 +545,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 25.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[18815290493505]": {
             "Source": "Prefabs/PlayerControls.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/0",
-                    "value": 3.0162057876586914
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/1",
-                    "value": -9.062707901000977
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/2",
-                    "value": 5.81118631362915
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/0",
-                    "value": -18.207569122314453
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/1",
-                    "value": -5.936935901641846
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/2",
-                    "value": 17.45604133605957
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1124,20 +610,6 @@
         "Instance_[2169395259456]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1886,40 +1358,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 7.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2465748002880]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1934,6 +1378,199 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 5.0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[1049981609836]/Components/AZ::Render::EditorMeshComponent",
+                    "value": {
+                        "$type": "AZ::Render::EditorMeshComponent",
+                        "Id": 7875411408848132095,
+                        "Controller": {
+                            "Configuration": {
+                                "ModelAsset": {
+                                    "assetId": {
+                                        "guid": "{CB2F5DCF-0FE0-59C7-A552-50F9C7BA56C8}",
+                                        "subId": 285127096
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/geometry/cube.obj.azmodel"
+                                },
+                                "SortKey": 0,
+                                "ExcludeFromReflectionCubeMaps": false,
+                                "UseForwardPassIBLSpecular": false,
+                                "IsRayTracingEnabled": true,
+                                "IsAlwaysDynamic": false,
+                                "SupportRayIntersection": false,
+                                "LodType": 0,
+                                "LodOverride": 0,
+                                "MinimumScreenCoverage": 0.0009259259095415473,
+                                "QualityDecayRate": 0.5,
+                                "LightingChannelConfig": {
+                                    "lightingChannelFlags": [
+                                        true,
+                                        false,
+                                        false,
+                                        false,
+                                        false
+                                    ]
+                                }
+                            }
+                        },
+                        "meshStats": {}
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorColliderComponent",
+                    "value": {
+                        "$type": "EditorColliderComponent",
+                        "Id": 8063646128929845215,
+                        "ColliderConfiguration": {
+                            "CollisionLayer": {
+                                "Index": 1
+                            },
+                            "CollisionGroupId": {
+                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
+                            },
+                            "Visible": false,
+                            "Trigger": false,
+                            "Simulated": true,
+                            "DummySimulated": false,
+                            "InSceneQueries": true,
+                            "Exclusive": true,
+                            "Position": [
+                                0.01683562994003296,
+                                -0.0007359683513641357,
+                                0.47405555844306946
+                            ],
+                            "Rotation": [
+                                0.0,
+                                0.0,
+                                0.0,
+                                1.0
+                            ],
+                            "MaterialSlots": {
+                                "Slots": [
+                                    {
+                                        "Name": "Entire object",
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                                "subId": 0
+                                            },
+                                            "loadBehavior": "QueueLoad",
+                                            "assetHint": ""
+                                        }
+                                    }
+                                ]
+                            },
+                            "propertyVisibilityFlags": 255,
+                            "ColliderTag": "",
+                            "RestOffset": 0.0,
+                            "ContactOffset": 0.019999999552965164
+                        },
+                        "ShapeConfiguration": {
+                            "ShapeType": 1,
+                            "Sphere": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Radius": 0.5
+                            },
+                            "Box": {
+                                "Scale": [
+                                    1.7999999523162842,
+                                    1.7999999523162842,
+                                    1.7999999523162842
+                                ],
+                                "Configuration": [
+                                    1.145308494567871,
+                                    1.1246756315231323,
+                                    1.26026451587677
+                                ]
+                            },
+                            "Capsule": {
+                                "Scale": [
+                                    1.0,
+                                    1.0,
+                                    1.0
+                                ],
+                                "Height": 1.0,
+                                "Radius": 0.25
+                            },
+                            "Cylinder": {
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "CookedData": "",
+                                    "Type": 0
+                                },
+                                "Subdivision": 16,
+                                "Height": 1.0,
+                                "Radius": 1.0
+                            },
+                            "PhysicsAsset": {
+                                "Asset": {
+                                    "assetId": {
+                                        "guid": "{00000000-0000-0000-0000-000000000000}",
+                                        "subId": 0
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": ""
+                                },
+                                "Configuration": {
+                                    "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "PhysicsAsset": {
+                                        "assetId": {
+                                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                                            "subId": 0
+                                        },
+                                        "loadBehavior": "PreLoad",
+                                        "assetHint": ""
+                                    },
+                                    "AssetScale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                    ],
+                                    "UseMaterialsFromAsset": true,
+                                    "SubdivisionLevel": 4
+                                }
+                            },
+                            "HasNonUniformScale": false,
+                            "SubdivisionLevel": 4
+                        },
+                        "DebugDrawSettings": {
+                            "LocallyEnabled": true
+                        },
+                        "ComponentMode": {},
+                        "HasNonUniformScale": false
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorStaticRigidBodyComponent",
+                    "value": {
+                        "$type": "EditorStaticRigidBodyComponent",
+                        "Id": 18112696283639658243
+                    }
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxColliderComponent"
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent"
                 }
             ]
         },
@@ -2010,20 +1647,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -2090,20 +1713,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 35.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -2246,20 +1855,6 @@
         "Instance_[2594597021760]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2475,20 +2070,6 @@
         "Instance_[2671906433088]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
