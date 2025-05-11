@@ -13,6 +13,7 @@
 #include <AzCore/Math/Vector2.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
+#include <AzCore/std/algorithm.h>
 #include <AzCore/std/limits.h>
 #include <AzCore/std/parallel/thread.h>
 
@@ -311,7 +312,7 @@ namespace DelayedResultGathering
                 m_grid[cellIndex] = center;
                 m_distanceToEnemyMap[cellIndex] = AZStd::numeric_limits<float>::max();
                 m_isPositionObstructedMap[cellIndex] = hasHit;
-               // m_isPositionExposedMap[cellIndex] = false; // #GH_TODO temp as it breaks gathernextframe
+                // m_isPositionExposedMap[cellIndex] = false; // #GH_TODO temp as it breaks gathernextframe
             }
         }
     }
@@ -380,7 +381,10 @@ namespace DelayedResultGathering
 
         // Wait for completion of previous frame. Should be done already so we shouldn't wait
         if (m_raycastingJobCompletion)
+        {
             m_raycastingJobCompletion->StartAndWaitForCompletion();
+            delete m_raycastingJobCompletion;
+        }
 
         m_raycastingJobCompletion = aznew AZ::JobCompletion();
 
@@ -420,6 +424,64 @@ namespace DelayedResultGathering
     void ExposureMapSystemComponent::UpdateExposure_MultiThreadedTimeSlicing([[maybe_unused]] const AZ::Vector3& eyePosition)
     {
         AZ_PROFILE_FUNCTION(Game);
+
+        if (m_timeSliceFrameIndex == 0)
+        {
+            // Wait for previous frame(s) raycasts before starting a new batch of work
+            // To prevent too large delay, could add a timeout for the wait and skip the update for this frame if too long
+            if (m_raycastingJobCompletion)
+            {
+                m_raycastingJobCompletion->StartAndWaitForCompletion();
+                delete m_raycastingJobCompletion;
+            }
+            m_raycastingJobCompletion = aznew AZ::JobCompletion();
+        }
+
+        m_raycastingJobCompletion = aznew AZ::JobCompletion();
+
+        auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
+        if (sceneHandle == AzPhysics::InvalidSceneHandle)
+        {
+            assert(false);
+            return;
+        }
+
+        const uint16_t numFrames = 10; // One full refresh will take 10 frames to complete
+        const uint16_t numCellsToHandlePerFrame = cellCount / numFrames;
+        const uint16_t maxCellIndexToHandleThisFrame =
+            AZStd::GetMin<uint16_t>((m_timeSliceFrameIndex + 1) * numCellsToHandlePerFrame, cellCount);
+
+        const uint16_t taskSize = ComputeTaskBatchSize();
+        for (uint16_t cellIndex = m_timeSliceFrameIndex * numCellsToHandlePerFrame; cellIndex < maxCellIndexToHandleThisFrame;
+             cellIndex += taskSize)
+        {
+            // We can no longer capture by reference as it might go out of scope
+            const auto raycastJob = [this, taskSize, cellIndex, eyePosition, sceneInterface, sceneHandle]()
+            {
+                uint16_t safeTaskSize = taskSize;
+                if (cellIndex + taskSize >= cellCount)
+                {
+                    safeTaskSize = cellCount - cellIndex;
+                }
+
+                for (uint16_t i = 0; i < safeTaskSize; ++i)
+                {
+                    m_isPositionExposedMap[cellIndex + i] =
+                        !IsCellToPositionObstructed(eyePosition, cellIndex + i, *sceneInterface, sceneHandle);
+                }
+            };
+
+            AZ::Job* executeGroupJob = AZ::CreateJobFunction(AZStd::move(raycastJob), true, nullptr);
+            executeGroupJob->SetDependent(m_raycastingJobCompletion);
+            executeGroupJob->Start();
+        }
+
+        m_timeSliceFrameIndex++;
+        if (m_timeSliceFrameIndex >= numFrames)
+        {
+            m_timeSliceFrameIndex = 0;
+        }
     }
 
 } // namespace DelayedResultGathering

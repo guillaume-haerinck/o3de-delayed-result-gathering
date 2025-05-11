@@ -95,5 +95,6 @@ namespace DelayedResultGathering
         AZStd::array<AZStd::atomic<bool>, cellCount> m_isPositionExposedMap; // For each position, true if visible by a sentinel POV
 
         AZ::JobCompletion* m_raycastingJobCompletion = nullptr;
+        uint16_t m_timeSliceFrameIndex = 0;
     };
 } // namespace DelayedResultGathering
