@@ -2,9 +2,22 @@
 
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
-#include <AzCore/Math/Vector2.h>
 #include <AzCore/Math/Vector3.h>
 #include <AzCore/std/containers/vector.h>
+#include <AzCore/std/tuple.h>
+
+namespace AZ
+{
+    class Vector2;
+}
+
+namespace AzPhysics
+{
+    // Dirty but cannot include #include <AzFramework/Physics/Common/PhysicsTypes.h> from .h will have to look at it
+    class SceneInterface;
+    using SceneIndex = AZ::s8;
+    using SceneHandle = AZStd::tuple<AZ::Crc32, SceneIndex>;
+} // namespace AzPhysics
 
 namespace DelayedResultGathering
 {
@@ -23,16 +36,23 @@ namespace DelayedResultGathering
         int GetTickOrder() final override;
         void OnTick(float deltaTime, AZ::ScriptTimePoint timePoint) final override;
 
-        uint16_t ComputeCellCount() const;
-        uint16_t ComputeCellIndex(uint8_t row, uint8_t column) const;
-        AZ::Vector3 ComputeCellCenter(uint8_t row, uint8_t column) const;
-        uint16_t PositionToCellIndex(const AZ::Vector2& position) const;
-
     private:
         //////////////////////////////////////////////////////////////////////////
         // AZ::Component
         void Activate() override;
         void Deactivate() override;
+
+        uint16_t ComputeCellCount() const;
+        uint16_t ComputeCellIndex(uint8_t row, uint8_t column) const;
+        AZ::Vector3 ComputeCellCenter(uint8_t row, uint8_t column) const;
+        uint16_t PositionToCellIndex(const AZ::Vector2& position) const;
+
+        //! Launch a raycast from cell position to provided position and check if there is an obstacle in between
+        bool IsCellToPositionObstructed(
+            const AZ::Vector3& position,
+            uint16_t cellIndex,
+            AzPhysics::SceneInterface& sceneInterface,
+            const AzPhysics::SceneHandle& sceneHandle) const;
 
         void BuildGrid();
         void DebugDrawExposureMap();

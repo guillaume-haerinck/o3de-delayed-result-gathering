@@ -1,9 +1,14 @@
 #include "ExposureMapLevelComponent.h"
 
+#include <AzCore/Component/EntityId.h>
+#include <AzCore/Component/TransformBus.h>
+#include <AzCore/EBus/Results.h>
 #include <AzCore/Interface/Interface.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Color.h>
+#include <AzCore/Math/Crc.h>
 #include <AzCore/Math/Transform.h>
+#include <AzCore/Math/Vector2.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/std/limits.h>
@@ -11,6 +16,7 @@
 #include <AzFramework/Physics/Common/PhysicsTypes.h>
 #include <AzFramework/Physics/PhysicsScene.h>
 #include <DebugDraw/DebugDrawBus.h>
+#include <LmbrCentral/Scripting/TagComponentBus.h>
 #include <assert.h>
 
 namespace DelayedResultGathering
@@ -45,6 +51,27 @@ namespace DelayedResultGathering
             m_gridNeedRebuild = false;
             BuildGrid();
         }
+
+        AZ::EBusAggregateResults<AZ::EntityId> aggregator;
+        LmbrCentral::TagGlobalRequestBus::EventResult(
+            aggregator, AZ::Crc32("Player"), &LmbrCentral::TagGlobalRequests::RequestTaggedEntities);
+
+        if (aggregator.values.empty())
+        {
+            assert(false && "No entity with a tag component with Player tag on the scene");
+            return;
+        }
+
+        AZ::Vector3 eyePosition;
+        const AZ::EntityId& playerId = aggregator.values[0];
+        AZ::TransformBus::EventResult(eyePosition, playerId, &AZ::TransformBus::Events::GetWorldTranslation);
+
+        // Position is at the feet and the player is around 2 meter tall
+        eyePosition.SetZ(eyePosition.GetZ() + 1.9f);
+
+        // #GH_TODO switch case for all the types
+        UpdateExposure_SingleThreaded(eyePosition);
+
         DebugDrawExposureMap();
     }
 
@@ -89,6 +116,31 @@ namespace DelayedResultGathering
         const uint8_t row = static_cast<uint8_t>(floor(position.GetY() / m_cellSize));
         const uint8_t column = static_cast<uint8_t>(floor(position.GetX() / m_cellSize));
         return ComputeCellIndex(row, column);
+    }
+
+    bool ExposureMapLevelComponent::IsCellToPositionObstructed(
+        const AZ::Vector3& position,
+        uint16_t cellIndex,
+        AzPhysics::SceneInterface& sceneInterface,
+        const AzPhysics::SceneHandle& sceneHandle) const
+    {
+        if (m_isPositionObstructedMap[cellIndex])
+            return true;
+
+        const AZ::Vector3& cellCenter = m_grid[cellIndex];
+        const AZ::Vector3 cellToPosition = cellCenter - position;
+        const AZ::Vector3 unitDir = cellToPosition.GetNormalizedSafe();
+        const float length = cellToPosition.GetLength() - 0.2f; // So that we stay above ground
+
+        AzPhysics::RayCastRequest request;
+        request.m_start = position;
+        request.m_direction = unitDir;
+        request.m_distance = length;
+        request.m_queryType = AzPhysics::SceneQuery::QueryType::Static;
+
+        const AzPhysics::SceneQueryHits result = sceneInterface.QueryScene(sceneHandle, &request);
+        const bool hasHit = result && result.m_hits[0].IsValid();
+        return hasHit;
     }
 
     void ExposureMapLevelComponent::Activate()
@@ -141,8 +193,21 @@ namespace DelayedResultGathering
         }
     }
 
-    void ExposureMapLevelComponent::UpdateExposure_SingleThreaded([[maybe_unused]] const AZ::Vector3& eyePosition)
+    void ExposureMapLevelComponent::UpdateExposure_SingleThreaded(const AZ::Vector3& eyePosition)
     {
+        auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        AzPhysics::SceneHandle sceneHandle = sceneInterface->GetSceneHandle(AzPhysics::DefaultPhysicsSceneName);
+        if (sceneHandle == AzPhysics::InvalidSceneHandle)
+        {
+            assert(false);
+            return;
+        }
+
+        const uint16_t cellCount = ComputeCellCount();
+        for (uint16_t cellIndex = 0; cellIndex < cellCount; ++cellIndex)
+        {
+            m_isPositionExposedMap[cellIndex] = IsCellToPositionObstructed(eyePosition, cellIndex, *sceneInterface, sceneHandle);
+        }
     }
 
 } // namespace DelayedResultGathering

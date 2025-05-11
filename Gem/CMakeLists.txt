@@ -34,6 +34,7 @@ ly_add_target(
             AZ::AzGameFramework
             Gem::Atom_AtomBridge.Static
             Gem::DebugDraw.Static
+            Gem::LmbrCentral.Static
 )
 
 ly_add_target(
