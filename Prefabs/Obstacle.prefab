@@ -90,6 +90,9 @@
                     "$type": "EditorWhiteBoxColliderComponent",
                     "Id": 5473415999995159786,
                     "Configuration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "MaterialSlots": {
                             "Slots": [
                                 {

@@ -19,10 +19,10 @@
                 "$type": "EditorEntitySortComponent",
                 "Id": 14126657869720434043,
                 "Child Entity Order": [
-                    "Entity_[1163754259827]",
                     "Entity_[1176639161715]",
                     "Entity_[1443545786432]",
-                    "Entity_[9110062409792]"
+                    "Entity_[9110062409792]",
+                    "Instance_[18815290493505]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -128,77 +128,6 @@
                 "Component_[952797371922080273]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 952797371922080273
-                }
-            }
-        },
-        "Entity_[1163754259827]": {
-            "Id": "Entity_[1163754259827]",
-            "Name": "Camera",
-            "Components": {
-                "Component_[11895140916889160460]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 11895140916889160460
-                },
-                "Component_[16880285896855930892]": {
-                    "$type": "{CA11DA46-29FF-4083-B5F6-E02C3A8C3A3D} EditorCameraComponent",
-                    "Id": 16880285896855930892,
-                    "Controller": {
-                        "Configuration": {
-                            "Field of View": 55.0
-                        }
-                    }
-                },
-                "Component_[17187464423780271193]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 17187464423780271193
-                },
-                "Component_[17495696818315413311]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 17495696818315413311
-                },
-                "Component_[18086214374043522055]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 18086214374043522055,
-                    "Parent Entity": "Entity_[1146574390643]",
-                    "Transform Data": {
-                        "Translate": [
-                            -2.3000001907348633,
-                            -3.9368600845336914,
-                            1.0
-                        ],
-                        "Rotate": [
-                            -2.050307512283325,
-                            1.9552897214889526,
-                            -43.623355865478516
-                        ]
-                    }
-                },
-                "Component_[2654521436129313160]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 2654521436129313160
-                },
-                "Component_[5265045084611556958]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 5265045084611556958
-                },
-                "Component_[7169798125182238623]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 7169798125182238623
-                },
-                "Component_[7255796294953281766]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 7255796294953281766,
-                    "m_template": {
-                        "$type": "FlyCameraInputComponent"
-                    }
-                },
-                "Component_[8866210352157164042]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 8866210352157164042
-                },
-                "Component_[9129253381063760879]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 9129253381063760879
                 }
             }
         },
@@ -370,8 +299,7 @@
                 },
                 "EditorLockComponent": {
                     "$type": "EditorLockComponent",
-                    "Id": 10939035067835900299,
-                    "Locked": true
+                    "Id": 10939035067835900299
                 },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
@@ -384,6 +312,26 @@
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 7531721042417522815
+                },
+                "EditorWhiteBoxColliderComponent": {
+                    "$type": "EditorWhiteBoxColliderComponent",
+                    "Id": 9982045363275751264,
+                    "Configuration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        },
+                        "propertyVisibilityFlags": 235
+                    },
+                    "MeshData": {
+                        "CookedData": "TlhTAU1FU0gPAAAAAAAAAAYAAAAIAAAADAAAAAAAAL8AAAC/MEyIvgAAIkIAAAC/MEyIvgAAIkIAACJCMEyIvgAAAL8AACJCMEyIvgAAAL8AACJCAAAAvwAAIkIAACJCAAAAvwAAIkIAAAC/AAAAvwAAAL8AAAC/AAAAvwcBAAQHAAQAAwQFBgQGBwcGAQACAwABAgUDAgUEAwYCAQYFAgsAAAAFCgsCAwQBAAkIBwZSVFJFAgAAAMUgAL/FIAC/xSAAvwAAAACDACJCgwAiQqcKiL4AAAAAAACAPwAAgD8AAIA/AACAP6oBJDqqASQ6tm5wNgAAAAAEAAAAAQAAAAIAAAAIAAAAAgAAAAAAAADFIAC/xSAAv8UgAL99/yFCxSAAv8UgAL99/yFCxSAAv8UgAL+5jYi+xSAAv8UgAL+DACJCgwAiQoMAIkKDACJCgwAiQoMAIkKDACJCgwAiQqcKiL6nCoi+pwqIvqcKiL5wAAAAwwAAAAMBAABDAQAAxSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/xSAAv8UgAL/FIAC/gwAiQne+/76DACJCgwAiQne+/76DACJCgwAiQne+/76nCoi+pwqIvne+/76nCoi+AQAAACMAAABjAAAAoQAAAAAAIjcAAAC/AAAAvwAAAL8AACJCAAAiQjBMiL4MAAAAMBgwGDAYMBgwGDAY"
+                    }
                 },
                 "EditorWhiteBoxComponent": {
                     "$type": "EditorWhiteBoxComponent",
@@ -958,8 +906,7 @@
                 },
                 "EditorLockComponent": {
                     "$type": "EditorLockComponent",
-                    "Id": 2946299281005760565,
-                    "Locked": true
+                    "Id": 2946299281005760565
                 },
                 "EditorOnlyEntityComponent": {
                     "$type": "EditorOnlyEntityComponent",
@@ -988,11 +935,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1004,11 +946,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1032,11 +969,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1048,11 +980,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1076,8 +1003,18 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[9110062409792]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 19.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 25.0
                 },
                 {
                     "op": "replace",
@@ -1092,37 +1029,67 @@
                             "assetHint": ""
                         }
                     }
+                }
+            ]
+        },
+        "Instance_[18815290493505]": {
+            "Source": "Prefabs/PlayerControls.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/0",
+                    "value": 3.0162057876586914
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/1",
+                    "value": -9.062707901000977
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Translate/2",
+                    "value": 5.81118631362915
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/0",
+                    "value": -18.207569122314453
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/1",
+                    "value": -5.936935901641846
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[10388564658753]/Components/Component_[7007042584455882295]/Transform Data/Rotate/2",
+                    "value": 17.45604133605957
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[9110062409792]"
+                    "value": "../Entity_[1146574390643]"
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 19.0
+                    "value": 5.020102500915527
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 4.223219871520996
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": 0.3602290153503418
                 }
             ]
         },
         "Instance_[2156510357568]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1137,11 +1104,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1164,8 +1126,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -1181,25 +1152,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1208,11 +1160,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1224,11 +1171,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1252,8 +1194,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -1269,25 +1220,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 13.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1296,30 +1228,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1332,16 +1240,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 13.0
-                }
-            ]
-        },
-        "Instance_[2220934867008]": {
-            "Source": "Prefabs/Obstacle.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1356,12 +1254,12 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
+                }
+            ]
+        },
+        "Instance_[2220934867008]": {
+            "Source": "Prefabs/Obstacle.prefab",
+            "Patches": [
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1376,17 +1274,26 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 11.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 }
             ]
         },
         "Instance_[2233819768896]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1401,11 +1308,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 9.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1428,8 +1330,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -1445,36 +1356,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 7.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2259589572672]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1489,11 +1376,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 17.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1516,11 +1398,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1532,11 +1409,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1560,11 +1432,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1577,11 +1444,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 17.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1604,11 +1466,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1620,11 +1477,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1648,11 +1500,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1665,11 +1512,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1692,11 +1534,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1709,11 +1546,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 31.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1736,11 +1568,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1752,11 +1579,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1780,8 +1602,18 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[9110062409792]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 29.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 9.0
                 },
                 {
                     "op": "replace",
@@ -1796,37 +1628,12 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[9110062409792]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 29.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 9.0
                 }
             ]
         },
         "Instance_[2362668787776]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1841,11 +1648,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 7.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1868,11 +1670,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1884,11 +1681,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1912,11 +1704,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1929,11 +1716,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 5.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -1956,11 +1738,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -1972,11 +1749,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2000,11 +1772,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -2016,11 +1783,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2044,30 +1806,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -2080,16 +1818,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 15.0
-                }
-            ]
-        },
-        "Instance_[2439978199104]": {
-            "Source": "Prefabs/Obstacle.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2104,12 +1832,12 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
+                }
+            ]
+        },
+        "Instance_[2439978199104]": {
+            "Source": "Prefabs/Obstacle.prefab",
+            "Patches": [
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2124,17 +1852,26 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 9.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 }
             ]
         },
         "Instance_[2452863100992]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2149,11 +1886,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 7.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2176,11 +1908,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -2192,11 +1919,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2220,8 +1942,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2237,36 +1968,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 17.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2491517806656]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2281,11 +1988,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 25.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2308,8 +2010,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2325,36 +2036,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 35.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2517287610432]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2369,11 +2056,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2396,30 +2078,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -2432,16 +2090,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 35.0
-                }
-            ]
-        },
-        "Instance_[2543057414208]": {
-            "Source": "Prefabs/Obstacle.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2456,11 +2104,25 @@
                             "assetHint": ""
                         }
                     }
-                },
+                }
+            ]
+        },
+        "Instance_[2543057414208]": {
+            "Source": "Prefabs/Obstacle.prefab",
+            "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2484,8 +2146,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2501,36 +2172,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2568827217984]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2545,11 +2192,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 37.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2572,8 +2214,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2589,12 +2240,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
+                }
+            ]
+        },
+        "Instance_[2594597021760]": {
+            "Source": "Prefabs/Obstacle.prefab",
+            "Patches": [
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
@@ -2608,16 +2259,6 @@
                             "assetHint": ""
                         }
                     }
-                }
-            ]
-        },
-        "Instance_[2594597021760]": {
-            "Source": "Prefabs/Obstacle.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2633,25 +2274,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -2660,11 +2282,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -2676,11 +2293,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2709,11 +2321,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -2725,11 +2332,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2758,30 +2360,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -2799,6 +2377,20 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 }
             ]
         },
@@ -2807,8 +2399,17 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
+                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
+                    "value": {
+                        "MeshAsset": {
+                            "assetId": {
+                                "guid": "{00000000-0000-0000-0000-000000000000}",
+                                "subId": 0
+                            },
+                            "loadBehavior": "QueueLoad",
+                            "assetHint": ""
+                        }
+                    }
                 },
                 {
                     "op": "replace",
@@ -2829,12 +2430,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 2.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
+                }
+            ]
+        },
+        "Instance_[2659021531200]": {
+            "Source": "Prefabs/Obstacle.prefab",
+            "Patches": [
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
@@ -2848,16 +2449,6 @@
                             "assetHint": ""
                         }
                     }
-                }
-            ]
-        },
-        "Instance_[2659021531200]": {
-            "Source": "Prefabs/Obstacle.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2878,25 +2469,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 2.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -2905,11 +2477,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
                     "value": {
                         "MeshAsset": {
@@ -2921,11 +2488,6 @@
                             "assetHint": ""
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
@@ -2954,11 +2516,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/EditorLockComponent/Locked",
-                    "value": true
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -2971,11 +2528,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorLockComponent/Locked",
-                    "value": true
                 },
                 {
                     "op": "replace",
