@@ -103,6 +103,9 @@
                                 1.1179144382476807
                             ]
                         }
+                    },
+                    "DebugDrawSettings": {
+                        "LocallyEnabled": false
                     }
                 },
                 "EditorDisabledCompositionComponent": {

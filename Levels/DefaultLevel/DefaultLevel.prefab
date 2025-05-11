@@ -357,7 +357,8 @@
                                     "MaterialAsset": {
                                         "assetId": {
                                             "guid": "{02C0493A-658A-56BB-9A79-0ACB066FCF63}"
-                                        }
+                                        },
+                                        "assetHint": "assets/materials/ground.azmaterial"
                                     }
                                 }
                             }
@@ -590,20 +591,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -632,20 +619,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -664,20 +637,6 @@
         "Instance_[2195165063232]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -712,20 +671,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 13.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -746,20 +691,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 11.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -780,40 +711,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 9.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2246704670784]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -848,40 +751,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 17.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2272474474560]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -916,40 +791,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 17.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2298244278336]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -984,20 +831,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1018,40 +851,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 31.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2336898984000]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1086,20 +891,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 9.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1120,40 +911,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 7.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2375553689664]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1188,40 +951,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 5.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2401323493440]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1242,20 +977,6 @@
         "Instance_[2414208395328]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1290,20 +1011,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 15.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1324,20 +1031,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 9.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1378,219 +1071,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 5.0
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[1049981609836]/Components/AZ::Render::EditorMeshComponent",
-                    "value": {
-                        "$type": "AZ::Render::EditorMeshComponent",
-                        "Id": 7875411408848132095,
-                        "Controller": {
-                            "Configuration": {
-                                "ModelAsset": {
-                                    "assetId": {
-                                        "guid": "{CB2F5DCF-0FE0-59C7-A552-50F9C7BA56C8}",
-                                        "subId": 285127096
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/geometry/cube.obj.azmodel"
-                                },
-                                "SortKey": 0,
-                                "ExcludeFromReflectionCubeMaps": false,
-                                "UseForwardPassIBLSpecular": false,
-                                "IsRayTracingEnabled": true,
-                                "IsAlwaysDynamic": false,
-                                "SupportRayIntersection": false,
-                                "LodType": 0,
-                                "LodOverride": 0,
-                                "MinimumScreenCoverage": 0.0009259259095415473,
-                                "QualityDecayRate": 0.5,
-                                "LightingChannelConfig": {
-                                    "lightingChannelFlags": [
-                                        true,
-                                        false,
-                                        false,
-                                        false,
-                                        false
-                                    ]
-                                }
-                            }
-                        },
-                        "meshStats": {}
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorColliderComponent",
-                    "value": {
-                        "$type": "EditorColliderComponent",
-                        "Id": 8063646128929845215,
-                        "ColliderConfiguration": {
-                            "CollisionLayer": {
-                                "Index": 1
-                            },
-                            "CollisionGroupId": {
-                                "GroupId": "{00000000-0000-0000-0000-000000000000}"
-                            },
-                            "Visible": false,
-                            "Trigger": false,
-                            "Simulated": true,
-                            "DummySimulated": false,
-                            "InSceneQueries": true,
-                            "Exclusive": true,
-                            "Position": [
-                                0.01683562994003296,
-                                -0.0007359683513641357,
-                                0.47405555844306946
-                            ],
-                            "Rotation": [
-                                0.0,
-                                0.0,
-                                0.0,
-                                1.0
-                            ],
-                            "MaterialSlots": {
-                                "Slots": [
-                                    {
-                                        "Name": "Entire object",
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                                "subId": 0
-                                            },
-                                            "loadBehavior": "QueueLoad",
-                                            "assetHint": ""
-                                        }
-                                    }
-                                ]
-                            },
-                            "propertyVisibilityFlags": 255,
-                            "ColliderTag": "",
-                            "RestOffset": 0.0,
-                            "ContactOffset": 0.019999999552965164
-                        },
-                        "ShapeConfiguration": {
-                            "ShapeType": 1,
-                            "Sphere": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Radius": 0.5
-                            },
-                            "Box": {
-                                "Scale": [
-                                    1.7999999523162842,
-                                    1.7999999523162842,
-                                    1.7999999523162842
-                                ],
-                                "Configuration": [
-                                    1.145308494567871,
-                                    1.1246756315231323,
-                                    1.26026451587677
-                                ]
-                            },
-                            "Capsule": {
-                                "Scale": [
-                                    1.0,
-                                    1.0,
-                                    1.0
-                                ],
-                                "Height": 1.0,
-                                "Radius": 0.25
-                            },
-                            "Cylinder": {
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "CookedData": "",
-                                    "Type": 0
-                                },
-                                "Subdivision": 16,
-                                "Height": 1.0,
-                                "Radius": 1.0
-                            },
-                            "PhysicsAsset": {
-                                "Asset": {
-                                    "assetId": {
-                                        "guid": "{00000000-0000-0000-0000-000000000000}",
-                                        "subId": 0
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": ""
-                                },
-                                "Configuration": {
-                                    "Scale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "PhysicsAsset": {
-                                        "assetId": {
-                                            "guid": "{00000000-0000-0000-0000-000000000000}",
-                                            "subId": 0
-                                        },
-                                        "loadBehavior": "PreLoad",
-                                        "assetHint": ""
-                                    },
-                                    "AssetScale": [
-                                        1.0,
-                                        1.0,
-                                        1.0
-                                    ],
-                                    "UseMaterialsFromAsset": true,
-                                    "SubdivisionLevel": 4
-                                }
-                            },
-                            "HasNonUniformScale": false,
-                            "SubdivisionLevel": 4
-                        },
-                        "DebugDrawSettings": {
-                            "LocallyEnabled": true
-                        },
-                        "ComponentMode": {},
-                        "HasNonUniformScale": false
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorStaticRigidBodyComponent",
-                    "value": {
-                        "$type": "EditorStaticRigidBodyComponent",
-                        "Id": 18112696283639658243
-                    }
-                },
-                {
-                    "op": "remove",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxColliderComponent"
-                },
-                {
-                    "op": "remove",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent"
                 }
             ]
         },
         "Instance_[2478632904768]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1625,20 +1111,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 25.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1679,20 +1151,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 33.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
@@ -1721,20 +1179,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1753,20 +1197,6 @@
         "Instance_[2555942316096]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1801,40 +1231,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 37.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2581712119872]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1877,20 +1279,6 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
                     "value": "../Entity_[9110062409792]"
                 },
@@ -1914,20 +1302,6 @@
         "Instance_[2620366825536]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -1972,40 +1346,12 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
                     "value": 2.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         },
         "Instance_[2646136629312]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2031,20 +1377,6 @@
         "Instance_[2659021531200]": {
             "Source": "Prefabs/Obstacle.prefab",
             "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
-                },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
@@ -2109,20 +1441,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
                     "value": 23.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1049981609836]/Components/EditorWhiteBoxComponent/EditorMeshAsset",
-                    "value": {
-                        "MeshAsset": {
-                            "assetId": {
-                                "guid": "{00000000-0000-0000-0000-000000000000}",
-                                "subId": 0
-                            },
-                            "loadBehavior": "QueueLoad",
-                            "assetHint": ""
-                        }
-                    }
                 }
             ]
         }
