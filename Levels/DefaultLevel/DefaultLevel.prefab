@@ -675,7 +675,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 30.396339416503906
+                    "value": 30.396339416503903
                 },
                 {
                     "op": "replace",
@@ -1582,6 +1582,31 @@
                     "path": "/Entities/Entity_[24016951258611]"
                 },
                 {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Name",
+                    "value": "Enemy"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 18.676485061645508
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
+                    "value": 30.21750831604004
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
+                    "value": -0.11444425582885742
+                },
+                {
                     "op": "add",
                     "path": "/Entities/Entity_[24012656291315]/Components/EditorDetourNavigationComponent",
                     "value": {
@@ -1614,34 +1639,9 @@
                         "m_template": {
                             "$type": "MoveToHideout_BehaviorComponent",
                             "Id": 0,
-                            "moveSpeed": 300.0
+                            "moveSpeed": 400.0
                         }
                     }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Name",
-                    "value": "Enemy"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
-                    "value": "../Entity_[1146574390643]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 18.676485061645508
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 30.21750831604004
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": -0.11444425582885742
                 }
             ]
         }

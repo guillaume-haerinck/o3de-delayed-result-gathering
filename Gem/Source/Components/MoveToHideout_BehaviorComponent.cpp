@@ -8,6 +8,7 @@
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/std/containers/vector.h>
 #include <AzFramework/Physics/CharacterBus.h>
+#include <DebugDraw/DebugDrawBus.h>
 #include <RecastNavigation/DetourNavigationBus.h>
 
 #include <assert.h>
@@ -58,6 +59,22 @@ namespace DelayedResultGathering
         const bool isMoving = !m_pathToTarget.empty();
         if (isMoving)
         {
+            // Current target
+            if (m_pathToTarget.size() != 1)
+            {
+                DebugDraw::DebugDrawRequestBus::Broadcast(
+                    &DebugDraw::DebugDrawRequests::DrawSphereAtLocation,
+                    m_pathToTarget.back(),
+                    1.f,
+                    AZ::Color::CreateFromRgba(0, 0, 200, 100),
+                    0.f);
+            }
+
+            // Final target
+            AZ::Aabb aabb = AZ::Aabb::CreateCenterHalfExtents(m_pathToTarget[0], AZ::Vector3(0.5f, 0.5f, 2.f));
+            DebugDraw::DebugDrawRequestBus::Broadcast(
+                &DebugDraw::DebugDrawRequests::DrawAabb, aabb, AZ::Color::CreateFromRgba(0, 0, 255, 125), 0.f);
+
             // Proceed to the current target position
             const AZ::Vector3& distance = m_pathToTarget.back() - currentPosition;
             constexpr float tolerance = 0.4f;

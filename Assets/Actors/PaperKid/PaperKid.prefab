@@ -263,6 +263,23 @@
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9961787620564189473
                 },
+                "EditorScriptCanvasComponent": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 16036485705031799208,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{9F1033F0-8B8C-5C96-A078-C2C4AD9AD004}",
+                            "path": "Assets/Actors/PaperKid/Animation/PaperKid_UpdateAnimGraph.scriptcanvas"
+                        },
+                        "sourceName": "PaperKid_UpdateAnimGraph.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{9F1033F0-8B8C-5C96-A078-C2C4AD9AD004}",
+                                "path": "Assets/Actors/PaperKid/Animation/PaperKid_UpdateAnimGraph.scriptcanvas"
+                            }
+                        }
+                    }
+                },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 8631389151256798475
